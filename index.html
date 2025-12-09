@@ -13,37 +13,37 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            line-height: 1.6;
+            line-height: 1.5;
             color: #1a1a1a;
             background: #f5f5f7;
-            font-size: 14px;
+            font-size: 12px;
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px 20px;
         }
 
         /* Header */
         .header {
             background: #461068;
             color: white;
-            padding: 60px 40px;
+            padding: 30px 30px;
             border-radius: 16px;
-            margin-bottom: 40px;
+            margin-bottom: 25px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
         }
 
         .header h1 {
-            font-size: 1.2em;
-            margin-bottom: 15px;
+            font-size: 1.1em;
+            margin-bottom: 8px;
             font-weight: 700;
         }
 
         .header p {
-            font-size: 0.95em;
+            font-size: 0.85em;
             opacity: 0.95;
         }
 
@@ -146,16 +146,16 @@
         }
 
         .question-title {
-            font-size: 1.1em;
+            font-size: 1.05em;
             color: #1a1a1a;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-weight: 600;
         }
 
         .question-subtitle {
             color: #666;
-            margin-bottom: 35px;
-            font-size: 0.95em;
+            margin-bottom: 20px;
+            font-size: 0.85em;
         }
 
         /* Option Cards */
@@ -163,8 +163,8 @@
             background: #f8f9fa;
             border: 3px solid #e9ecef;
             border-radius: 12px;
-            padding: 25px 30px;
-            margin-bottom: 20px;
+            padding: 18px 20px;
+            margin-bottom: 15px;
             cursor: pointer;
             transition: all 0.3s ease;
             position: relative;
@@ -203,10 +203,10 @@
         }
 
         .option-title {
-            font-size: 1.05em;
+            font-size: 0.95em;
             font-weight: 600;
             color: #1a1a1a;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -214,7 +214,7 @@
 
         .option-description {
             color: #1a1a1a;
-            font-size: 0.9em;
+            font-size: 0.85em;
             line-height: 1.5;
         }
 
@@ -265,7 +265,7 @@
 
         .checkbox-description {
             color: #666;
-            font-size: 0.9em;
+            font-size: 0.85em;
         }
 
         /* Help Box */
@@ -281,7 +281,7 @@
             color: #093B75;
             display: block;
             margin-bottom: 10px;
-            font-size: 1.05em;
+            font-size: 0.85em;
         }
 
         .help-box p strong {
@@ -308,14 +308,14 @@
         .button-group {
             display: flex;
             gap: 15px;
-            margin-top: 40px;
+            margin-top: 25px;
         }
 
         .btn {
-            padding: 14px 35px;
+            padding: 10px 25px;
             border-radius: 8px;
             border: none;
-            font-size: 1em;
+            font-size: 0.9em;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -369,7 +369,7 @@
             text-align: center;
             color: #666;
             margin-bottom: 40px;
-            font-size: 0.95em;
+            font-size: 0.85em;
         }
 
         .doc-category {
@@ -383,7 +383,7 @@
         .doc-category h3 {
             color: #093B75;
             margin-bottom: 20px;
-            font-size: 1.2em;
+            font-size: 0.85em;
         }
 
         .doc-item {
@@ -403,7 +403,7 @@
 
         .doc-item-description {
             color: #6c757d;
-            font-size: 0.9em;
+            font-size: 0.85em;
             line-height: 1.6;
         }
 
@@ -481,7 +481,7 @@
             }
 
             .header h1 {
-                font-size: 1.1em;
+                font-size: 1em;
             }
 
             .button-group {
@@ -670,8 +670,8 @@
                 </div>
 
                 <div style="background: #fff; border: 3px solid #461068; border-radius: 12px; padding: 30px; margin: 30px 0;">
-                    <h3 style="color: #461068; margin-bottom: 20px; font-size: 1.1em;">📋 Votre situation</h3>
-                    <p style="font-size: 0.95em; color: #1a1a1a; margin-bottom: 25px;">
+                    <h3 style="color: #461068; margin-bottom: 20px; font-size: 0.85em;">📋 Votre situation</h3>
+                    <p style="font-size: 0.85em; color: #1a1a1a; margin-bottom: 25px;">
                         Est-ce qu'un ou plusieurs participants vont <strong>devenir NOUVEAUX bénéficiaires effectifs</strong> de la société ?
                     </p>
 
@@ -688,14 +688,14 @@
                         <div style="background: #FAFFA4; border: 2px solid #e0e0e0; border-radius: 10px; padding: 20px; margin-bottom: 15px; cursor: pointer; transition: all 0.3s ease;" onclick="selectPPAnswer('yes')" id="pp-yes-card">
                             <label style="display: flex; align-items: center; cursor: pointer; margin: 0;">
                                 <input type="radio" name="ppNewBE" value="yes" id="ppNewBEYes" style="width: 24px; height: 24px; margin-right: 15px; cursor: pointer;" onchange="handlePPAnswer('yes')">
-                                <span style="font-size: 0.95em; font-weight: 600; color: #705208;">✅ OUI, un ou plusieurs participants vont devenir nouveaux BE</span>
+                                <span style="font-size: 0.85em; font-weight: 600; color: #705208;">✅ OUI, un ou plusieurs participants vont devenir nouveaux BE</span>
                             </label>
                         </div>
 
                         <div style="background: #FFC9A6; border: 2px solid #e0e0e0; border-radius: 10px; padding: 20px; cursor: pointer; transition: all 0.3s ease;" onclick="selectPPAnswer('no')" id="pp-no-card">
                             <label style="display: flex; align-items: center; cursor: pointer; margin: 0;">
                                 <input type="radio" name="ppNewBE" value="no" id="ppNewBENo" style="width: 24px; height: 24px; margin-right: 15px; cursor: pointer;" onchange="handlePPAnswer('no')">
-                                <span style="font-size: 0.95em; font-weight: 600; color: #7A250C;">❌ NON, aucun participant ne devient nouveau BE</span>
+                                <span style="font-size: 0.85em; font-weight: 600; color: #7A250C;">❌ NON, aucun participant ne devient nouveau BE</span>
                             </label>
                         </div>
                     </div>
@@ -765,33 +765,29 @@
                 <h2 class="result-title">✅ Vos Documents Requis</h2>
                 <p class="result-subtitle">Voici la liste personnalisée des documents à fournir pour votre augmentation de capital</p>
 
-                <div style="text-align: center; margin: 30px 0;">
+                <div id="resultsContent"></div>
+
+                <div style="display: flex; gap: 15px; margin-top: 30px; align-items: center;">
+                    <button class="btn btn-secondary" onclick="goBackFromResults()" style="flex: 1;">← Retour en arrière</button>
                     <button onclick="printResults()" style="
-                        background: #093B75;
+                        background: #461068;
                         color: white;
                         border: none;
-                        padding: 15px 30px;
+                        padding: 10px 25px;
                         border-radius: 8px;
-                        font-size: 1em;
+                        font-size: 0.9em;
                         font-weight: 600;
                         cursor: pointer;
                         display: inline-flex;
                         align-items: center;
-                        gap: 10px;
-                        box-shadow: 0 2px 8px rgba(9, 59, 117, 0.3);
+                        justify-content: center;
+                        gap: 8px;
+                        box-shadow: 0 2px 8px rgba(70, 16, 104, 0.3);
                         transition: all 0.3s ease;
-                    " onmouseover="this.style.background='#072b57'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(9, 59, 117, 0.4)'" onmouseout="this.style.background='#093B75'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(9, 59, 117, 0.3)'">
-                        📥 Télécharger en PDF
+                        flex: 1;
+                    " onmouseover="this.style.background='#350a4d'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(70, 16, 104, 0.4)'" onmouseout="this.style.background='#461068'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(70, 16, 104, 0.3)'">
+                        📥 Télécharger PDF
                     </button>
-                    <p style="color: #6c757d; font-size: 0.9em; margin-top: 10px;">
-                        💡 Le bouton ouvre la fenêtre d'impression. Choisissez "Enregistrer en PDF" pour sauvegarder votre liste.
-                    </p>
-                </div>
-
-                <div id="resultsContent"></div>
-
-                <div style="display: flex; gap: 15px; margin-top: 30px;">
-                    <button class="btn btn-secondary" onclick="goBackFromResults()" style="flex: 1;">← Retour en arrière</button>
                     <button class="btn btn-primary" onclick="restart()" style="flex: 1; background: #093B75;">🔄 Retour au début</button>
                 </div>
             </div>
@@ -1048,7 +1044,7 @@
             // SECTION 1: Universal documents for ALL PP (blue header)
             html += `
                 <div style="background: #093B75; color: white; padding: 15px 25px; border-radius: 8px 8px 0 0; margin-bottom: 0;">
-                    <h4 style="margin: 0; font-size: 0.95em; font-weight: 600;">📋 Documents requis pour TOUS les participants personnes physiques</h4>
+                    <h4 style="margin: 0; font-size: 0.85em; font-weight: 600;">📋 Documents requis pour TOUS les participants personnes physiques</h4>
                 </div>
             `;
 
@@ -1077,7 +1073,7 @@
             // SECTION 2: Additional documents for ≥25% (orange header)
             html += `
                 <div style="background: #FFC9A6; color: #7A250C; padding: 15px 25px; border-radius: 8px 8px 0 0; margin-top: 30px; margin-bottom: 0;">
-                    <h4 style="margin: 0; font-size: 0.95em; font-weight: 600;">📝 Document additionnel pour les personnes physiques qui vont détenir ≥ 25% du capital social APRÈS l'augmentation de capital</h4>
+                    <h4 style="margin: 0; font-size: 0.85em; font-weight: 600;">📝 Document additionnel pour les personnes physiques qui vont détenir ≥ 25% du capital social APRÈS l'augmentation de capital</h4>
                 </div>
             `;
 
@@ -1097,7 +1093,7 @@
             if (answers.hasNewBE) {
                 html += `
                     <div style="background: #FFC9A6; color: #7A250C; padding: 15px 25px; border-radius: 8px 8px 0 0; margin-top: 30px; margin-bottom: 0;">
-                        <h4 style="margin: 0; font-size: 0.95em; font-weight: 600;">📝 Document additionnel pour nouveaux bénéficiaires effectifs</h4>
+                        <h4 style="margin: 0; font-size: 0.85em; font-weight: 600;">📝 Document additionnel pour nouveaux bénéficiaires effectifs</h4>
                     </div>
                     <div class="doc-item" style="margin-top: 0; border-radius: 0 0 8px 8px;">
                         <div class="doc-item-title">✓ Formulaire d'auto-déclaration</div>
@@ -1138,7 +1134,7 @@
                 // Universal document section header
                 html += `
                     <div style="background: #093B75; color: white; padding: 15px 25px; border-radius: 8px 8px 0 0; margin-top: 30px; margin-bottom: 0;">
-                        <h4 style="margin: 0; font-size: 0.95em; font-weight: 600;">📋 Document requis pour TOUS les participants personnes morales</h4>
+                        <h4 style="margin: 0; font-size: 0.85em; font-weight: 600;">📋 Document requis pour TOUS les participants personnes morales</h4>
                     </div>
                 `;
 
