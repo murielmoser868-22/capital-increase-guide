@@ -437,6 +437,7 @@
             padding: 15px;
             text-align: left;
             font-weight: 600;
+            font-size: 0.85em;
         }
 
         .pm-table td {
@@ -491,13 +492,18 @@
 
         /* Print/PDF specific styles */
         @media print {
-            /* Hide navigation and interactive elements */
+            /* Hide ALL navigation and interactive elements */
             .header,
             .progress-tracker,
+            .progress-bar,
+            .progress-line,
+            .step-label,
             .question-section,
             button,
             .btn,
-            .result-subtitle {
+            .result-subtitle,
+            .container > .header,
+            .step-indicator {
                 display: none !important;
             }
 
@@ -512,19 +518,89 @@
             /* Optimize page layout */
             body {
                 margin: 0;
-                padding: 20px;
+                padding: 15px;
                 background: white;
+                font-size: 11pt;
+            }
+
+            .container {
+                padding: 0 !important;
+                margin: 0 !important;
             }
 
             /* Title styling for print */
             .result-title {
                 color: #093B75;
-                font-size: 24pt;
-                margin-bottom: 20pt;
+                font-size: 20pt;
+                margin-bottom: 15pt;
+                margin-top: 0;
                 page-break-after: avoid;
+                font-weight: 700;
             }
 
-            /* Prevent page breaks inside cards */
+            /* Summary box styling */
+            .summary-box {
+                background: #f8f9fa !important;
+                border: 1pt solid #dee2e6 !important;
+                padding: 12pt !important;
+                margin-bottom: 15pt !important;
+                border-radius: 4pt;
+            }
+
+            .summary-box h4 {
+                font-size: 13pt !important;
+                margin-top: 0 !important;
+                margin-bottom: 8pt !important;
+            }
+
+            .summary-box ul {
+                margin: 0 !important;
+                padding-left: 20pt !important;
+            }
+
+            .summary-box li {
+                font-size: 10pt !important;
+                margin-bottom: 4pt !important;
+            }
+
+            /* Doc category headers */
+            .doc-category h3,
+            div[style*="background: #093B75"],
+            div[style*="background: #FFC9A6"] {
+                background: #f0f0f0 !important;
+                color: #000 !important;
+                padding: 10pt !important;
+                margin-top: 12pt !important;
+                margin-bottom: 0 !important;
+                font-size: 12pt !important;
+                font-weight: 700 !important;
+                border: 1pt solid #ddd !important;
+                border-bottom: none !important;
+            }
+
+            /* Doc items styling */
+            .doc-item {
+                background: white !important;
+                border: 1pt solid #ddd !important;
+                padding: 10pt !important;
+                margin-bottom: 10pt !important;
+                page-break-inside: avoid;
+            }
+
+            .doc-item-title {
+                font-size: 11pt !important;
+                font-weight: 600 !important;
+                margin-bottom: 6pt !important;
+                color: #000 !important;
+            }
+
+            .doc-item-description {
+                font-size: 10pt !important;
+                color: #333 !important;
+                line-height: 1.4 !important;
+            }
+
+            /* Prevent page breaks inside important sections */
             .doc-item,
             .doc-category,
             .summary-box,
@@ -532,35 +608,63 @@
                 page-break-inside: avoid;
             }
 
-            /* Ensure links are visible in PDF */
+            /* Links styling for print */
             a {
-                color: #093B75;
-                text-decoration: underline;
+                color: #093B75 !important;
+                text-decoration: underline !important;
             }
 
-            /* Print URLs after links */
+            /* Print URLs after links but make them smaller */
             a[href]:after {
                 content: " (" attr(href) ")";
-                font-size: 0.8em;
+                font-size: 7pt;
                 color: #666;
+                word-break: break-all;
             }
 
-            /* Optimize table printing */
+            /* Table styling */
             .pm-table {
                 width: 100%;
                 border-collapse: collapse;
+                margin-top: 10pt;
             }
 
             .pm-table th,
             .pm-table td {
-                border: 1px solid #ddd;
-                padding: 8pt;
+                border: 1pt solid #ddd !important;
+                padding: 8pt !important;
+                font-size: 9pt !important;
             }
 
-            /* Remove shadows and effects for print */
+            .pm-table th {
+                background: #f0f0f0 !important;
+                font-weight: 700 !important;
+            }
+
+            /* Help boxes */
+            .help-box {
+                background: #fffbea !important;
+                border: 1pt solid #ffd900 !important;
+                padding: 10pt !important;
+                margin: 10pt 0 !important;
+                font-size: 9pt !important;
+            }
+
+            /* Remove all shadows and effects */
             * {
                 box-shadow: none !important;
                 text-shadow: none !important;
+            }
+
+            /* Force consistent margins */
+            h3, h4 {
+                page-break-after: avoid;
+            }
+
+            /* Emoji and icons - keep them visible */
+            .doc-item-title::before,
+            .summary-box h4::before {
+                display: inline !important;
             }
         }
     </style>
