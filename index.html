@@ -668,6 +668,7 @@
             }
         }
     </style>
+    <!-- jsPDF library for PDF generation with clickable links -->
 </head>
 <body>
     <div class="container">
@@ -1193,7 +1194,7 @@
                 </div>
             `;
 
-            // SECTION 3: Formulaire BE (if applicable) - separate orange section
+            // SECTION 3: Formulaire Bénéficiaire effectif (if applicable) - separate orange section
             if (answers.hasNewBE) {
                 html += `
                     <div style="background: #FFC9A6; color: #7A250C; padding: 15px 25px; border-radius: 8px 8px 0 0; margin-top: 30px; margin-bottom: 0;">
@@ -1202,7 +1203,7 @@
                     <div class="doc-item" style="margin-top: 0; border-radius: 0 0 8px 8px;">
                         <div class="doc-item-title">✓ Formulaire d'auto-déclaration</div>
                         <div class="doc-item-description">
-                            Pour chaque personne qui devient nouveau bénéficiaire effectif (n'était PAS BE avant l'opération et le devient après). 
+                            Pour chaque personne qui devient nouveau bénéficiaire effectif (n'était PAS bénéficiaire effectif avant l'opération et le devient après). 
                             Document à remplir disponible en pièce jointe de l'email.
                         </div>
                     </div>
@@ -1255,7 +1256,7 @@
                 `;
             }
 
-            // Show tables for selected PM types
+            // Show tables for selected PM types ONLY
             if (answers.pmTypes.includes('pmSocietesFR')) {
                 html += generateSocietesFRTable();
             }
@@ -1330,18 +1331,18 @@
                         <tr>
                             <td>≥ 25%</td>
                             <td>
-                                <div class="doc-list">✓ Certificat d'immatriculation (&lt; 3 mois, traduit)</div>
-                                <div class="doc-list">✓ Certificat "good standing" (&lt; 3 mois, traduit)</div>
+                                <div class="doc-list">✓ Certificat d'immatriculation (&lt; 3 mois, traduit en français)</div>
+                                <div class="doc-list">✓ Certificat "good standing" (&lt; 3 mois, traduit en français)</div>
                                 <div class="doc-list">✓ Statuts en vigueur</div>
                                 <div class="doc-list">✓ Numéro fiscal + LEI si applicable</div>
                                 <div class="doc-list">✓ Registre administrateurs/dirigeants</div>
                                 <div class="doc-list">✓ Organigramme complet</div>
                                 <div class="doc-list">✓ Pouvoirs signataires</div>
-                                <div class="doc-list">✓ Structure actionnariat (jusqu'aux BE ≥25%)</div>
-                                <div class="doc-list">✓ Comptes annuels (3 ans)</div>
+                                <div class="doc-list">✓ Structure actionnariat (jusqu'aux Bénéficiaires effectifs ≥25%)</div>
+                                <div class="doc-list">✓ Comptes annuels (3 dernières années)</div>
                                 <div class="doc-list"><strong>✓ Preuve documentaire de l'origine des fonds</strong> (<a href="https://support-fr.qonto.com/hc/fr/articles/38738891662737-Quels-documents-peuvent-%C3%AAtre-fournis-comme-preuve-de-l-origine-des-fonds#h_01K4AXEVC8SX6778VWKBZTWE7M" target="_blank">voir quels documents justificatifs sont acceptés</a>)</div>
                                 <div style="background: #f8f9fa; padding: 12px; margin-top: 10px; border-radius: 6px;">
-                                    <strong>Pour chaque BE ≥ 25% :</strong><br>
+                                    <strong>Pour chaque Bénéficiaire effectif ≥ 25% :</strong><br>
                                     ✓ Pièce d'identité<br>
                                     ✓ Justificatif domicile
                                 </div>
@@ -1357,7 +1358,7 @@
                 <h4 style="margin: 25px 0 15px 0;">💼 Fonds d'Investissement</h4>
                 <div style="background: #FFDFEA; border-left: 5px solid #7E0F4C; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
                     <strong style="color: #7E0F4C;">🚫 IMPORTANT</strong>
-                    <p style="color: #7E0F4C; margin: 5px 0 0 0;">Les fonds hors UE ne sont PAS acceptés</p>
+                    <p style="color: #7E0F4C; margin: 5px 0 0 0;">Les fonds d'investissement hors UE ne sont PAS acceptés</p>
                 </div>
                 <table class="pm-table">
                     <thead>
@@ -1377,7 +1378,7 @@
                         <tr>
                             <td>≥ 25%</td>
                             <td>
-                                <div class="doc-list">✓ Prospectus du fonds (traduit)</div>
+                                <div class="doc-list">✓ Prospectus du fonds (traduit en français)</div>
                                 <div class="doc-list">✓ Nom du gestionnaire</div>
                                 <div class="doc-list">✓ Preuve agrément société de gestion (AMF/UE)</div>
                                 <div class="doc-list">✓ Pièce d'identité représentant</div>
@@ -1403,13 +1404,13 @@
                         <tr>
                             <td>&lt; 25%</td>
                             <td>
-                                <div class="doc-list">✓ Avis INSEE (FR) ou équivalent (traduit)</div>
+                                <div class="doc-list">✓ Avis INSEE (FR) ou équivalent (traduit en français)</div>
                             </td>
                         </tr>
                         <tr>
                             <td>≥ 25%</td>
                             <td>
-                                <div class="doc-list">✓ Avis INSEE ou équivalent (traduit)</div>
+                                <div class="doc-list">✓ Avis INSEE ou équivalent (traduit en français)</div>
                                 <div class="doc-list">✓ Statuts à jour</div>
                                 <div class="doc-list">✓ Récépissé de déclaration</div>
                                 <div class="doc-list"><strong>✓ Preuve documentaire de l'origine des fonds</strong> (<a href="https://support-fr.qonto.com/hc/fr/articles/38738891662737-Quels-documents-peuvent-%C3%AAtre-fournis-comme-preuve-de-l-origine-des-fonds#h_01K4AXEVC8SX6778VWKBZTWE7M" target="_blank">voir quels documents justificatifs sont acceptés</a>)</div>
@@ -1434,13 +1435,13 @@
                         <tr>
                             <td>&lt; 25%</td>
                             <td>
-                                <div class="doc-list">✓ Acte constitutif/charte (traduit)</div>
+                                <div class="doc-list">✓ Acte constitutif/charte (traduit en français)</div>
                             </td>
                         </tr>
                         <tr>
                             <td>≥ 25%</td>
                             <td>
-                                <div class="doc-list">✓ Acte constitutif/charte (traduit)</div>
+                                <div class="doc-list">✓ Acte constitutif/charte (traduit en français)</div>
                                 <div class="doc-list">✓ Certificat d'enregistrement</div>
                                 <div class="doc-list">✓ Numéro fiscal</div>
                                 <div class="doc-list">✓ Statuts + liste membres</div>
@@ -1459,8 +1460,6 @@
 
         function printResults() {
             console.log("Bouton PDF cliqué - Ouverture de l'impression...");
-            
-            // Add small delay to ensure browser doesn't block
             setTimeout(function() {
                 try {
                     window.print();
