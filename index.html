@@ -417,6 +417,28 @@
             border-bottom-style: solid;
         }
 
+        /* Download buttons */
+        .download-btn {
+            display: inline-block;
+            background: #461068;
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none !important;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .download-btn:hover {
+            background: #5a1580;
+            color: white !important;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(70, 16, 104, 0.3);
+        }
+
         /* PM Tables in Results */
         .pm-table {
             width: 100%;
@@ -1101,7 +1123,9 @@
                         <div class="doc-item">
                             <div class="doc-item-title">✓ Déclaration d'origine des fonds</div>
                             <div class="doc-item-description">
-                                Document à remplir disponible en pièce jointe de l'email
+                                Document à remplir et retourner à Qonto
+                                <br>
+                                <a href="documents/Déclaration origine de fonds - Personne physique .pdf" download class="download-btn">📥 Télécharger le formulaire</a>
                             </div>
                         </div>
 
@@ -1158,8 +1182,10 @@
                 <div class="doc-item" style="margin-top: 0; border-radius: 0;">
                     <div class="doc-item-title">✓ Déclaration d'origine des fonds</div>
                     <div class="doc-item-description">
-                        Document à remplir disponible en pièce jointe de l'email (version personnes physiques). 
+                        Document à remplir et retourner à Qonto (version personnes physiques). 
                         À compléter et signer par toutes les personnes physiques qui participent à l'opération.
+                        <br>
+                        <a href="documents/Déclaration origine de fonds - Personne physique .pdf" download class="download-btn">📥 Télécharger le formulaire</a>
                     </div>
                 </div>
             `;
@@ -1204,7 +1230,9 @@
                         <div class="doc-item-title">✓ Formulaire d'auto-déclaration</div>
                         <div class="doc-item-description">
                             Pour chaque personne qui devient nouveau bénéficiaire effectif (n'était PAS bénéficiaire effectif avant l'opération et le devient après). 
-                            Document à remplir disponible en pièce jointe de l'email.
+                            Document à remplir et retourner à Qonto.
+                            <br>
+                            <a href="documents/Formulaire d'auto déclaration.pdf" download class="download-btn">📥 Télécharger le formulaire</a>
                         </div>
                     </div>
                 `;
@@ -1249,8 +1277,10 @@
                     <div class="doc-item" style="margin-top: 0; border-radius: 0 0 8px 8px;">
                         <div class="doc-item-title">✓ Déclaration d'origine des fonds</div>
                         <div class="doc-item-description">
-                            Document à remplir disponible en pièce jointe de l'email (version personnes morales)
+                            Document à remplir et retourner à Qonto (version personnes morales)
                             ${hasFunds ? '<br><br>⚠️ <em>À l\'exception des fonds d\'investissement</em>' : ''}
+                            <br>
+                            <a href="documents/Déclaration origine de fonds - Personne morale.pdf" download class="download-btn">📥 Télécharger le formulaire</a>
                         </div>
                     </div>
                 `;
