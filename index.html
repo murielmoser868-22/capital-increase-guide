@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -831,7 +830,7 @@
 
                 <div class="button-group">
                     <button class="btn btn-secondary" onclick="prevQuestion(3)">← Précédent</button>
-                    <button class="btn btn-primary" onclick="continuePPtoNext()">Continuer →</button>
+                    <button class="btn btn-primary" id="ppContinueBtn" onclick="continuePPtoNext()" disabled style="opacity: 0.5; cursor: not-allowed;">Continuer →</button>
                 </div>
             </div>
 
@@ -884,7 +883,7 @@
 
                 <div class="button-group">
                     <button class="btn btn-secondary" onclick="prevQuestion(3)">← Précédent</button>
-                    <button class="btn btn-primary" onclick="validateAndGenerateResults()">Voir mes documents →</button>
+                    <button class="btn btn-primary" id="pmContinueBtn" onclick="generateResults()" disabled style="opacity: 0.5; cursor: not-allowed;">Voir mes documents →</button>
                 </div>
             </div>
 
@@ -978,6 +977,24 @@
                 } else {
                     answers.pmTypes = answers.pmTypes.filter(t => t !== id);
                 }
+                
+                // Enable/disable PM continue button based on selection
+                updatePMContinueButton();
+            }
+        }
+        
+        function updatePMContinueButton() {
+            const pmContinueBtn = document.getElementById('pmContinueBtn');
+            if (pmContinueBtn) {
+                if (answers.pmTypes.length > 0) {
+                    pmContinueBtn.disabled = false;
+                    pmContinueBtn.style.opacity = '1';
+                    pmContinueBtn.style.cursor = 'pointer';
+                } else {
+                    pmContinueBtn.disabled = true;
+                    pmContinueBtn.style.opacity = '0.5';
+                    pmContinueBtn.style.cursor = 'not-allowed';
+                }
             }
         }
 
@@ -993,11 +1010,10 @@
         }
 
         function handlePPAnswer(answer) {
-            console.log('handlePPAnswer called with:', answer);
-            
             // Update visual state
             const yesCard = document.getElementById('pp-yes-card');
             const noCard = document.getElementById('pp-no-card');
+            const continueBtn = document.getElementById('ppContinueBtn');
             
             if (answer === 'yes') {
                 yesCard.style.borderColor = '#705208';
@@ -1005,17 +1021,18 @@
                 noCard.style.borderColor = '#e0e0e0';
                 noCard.style.borderWidth = '2px';
                 answers.hasNewBE = true;
-                console.log('Set hasNewBE to TRUE');
             } else {
                 noCard.style.borderColor = '#7A250C';
                 noCard.style.borderWidth = '3px';
                 yesCard.style.borderColor = '#e0e0e0';
                 yesCard.style.borderWidth = '2px';
                 answers.hasNewBE = false;
-                console.log('Set hasNewBE to FALSE');
             }
             
-            console.log('Current answers.hasNewBE:', answers.hasNewBE);
+            // Enable the continue button
+            continueBtn.disabled = false;
+            continueBtn.style.opacity = '1';
+            continueBtn.style.cursor = 'pointer';
         }
 
         // Navigation
@@ -1047,19 +1064,6 @@
         }
 
         function continuePPtoNext() {
-            // Debug logs
-            console.log('continuePPtoNext called');
-            console.log('answers.hasNewBE =', answers.hasNewBE);
-            console.log('Type of hasNewBE:', typeof answers.hasNewBE);
-            
-            // Validate that an answer was selected
-            if (answers.hasNewBE === null || answers.hasNewBE === undefined) {
-                alert('⚠️ Veuillez sélectionner une réponse (OUI ou NON) avant de continuer.');
-                return;
-            }
-            
-            console.log('Validation passed, continuing...');
-            
             // From PP question, go to PM if mix, otherwise to results
             if (answers.type === 'mix') {
                 document.getElementById('q3-pp').classList.remove('active');
@@ -1109,17 +1113,6 @@
         }
 
         // Results generation
-        function validateAndGenerateResults() {
-            // Validate that at least one PM type is selected
-            if (answers.pmTypes.length === 0) {
-                alert('⚠️ Veuillez sélectionner au moins un type d\'entité avant de continuer.');
-                return;
-            }
-            
-            // If validation passes, generate results
-            generateResults();
-        }
-
         function generateResults() {
             currentStep = 4;
             updateProgress();
@@ -1572,7 +1565,20 @@
             document.querySelectorAll('.checkbox-card').forEach(card => card.classList.remove('checked'));
             document.querySelectorAll('input[type="radio"]').forEach(input => input.checked = false);
             document.querySelectorAll('input[type="checkbox"]').forEach(input => input.checked = false);
-            document.querySelectorAll('.btn-primary').forEach(btn => btn.disabled = true);
+            
+            // Reset continue buttons to disabled state
+            const ppContinueBtn = document.getElementById('ppContinueBtn');
+            const pmContinueBtn = document.getElementById('pmContinueBtn');
+            if (ppContinueBtn) {
+                ppContinueBtn.disabled = true;
+                ppContinueBtn.style.opacity = '0.5';
+                ppContinueBtn.style.cursor = 'not-allowed';
+            }
+            if (pmContinueBtn) {
+                pmContinueBtn.disabled = true;
+                pmContinueBtn.style.opacity = '0.5';
+                pmContinueBtn.style.cursor = 'not-allowed';
+            }
 
             // Reset PP answer cards borders
             const yesCard = document.getElementById('pp-yes-card');
