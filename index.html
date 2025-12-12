@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -376,7 +377,7 @@
             background: #f8f9fa;
             border-radius: 12px;
             padding: 30px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             border-left: 5px solid #093B75;
         }
 
@@ -385,58 +386,143 @@
             margin-bottom: 20px;
             font-size: 0.85em;
         }
+        
+        /* Modern, clean PP and PM sections - subtle colored backgrounds */
+        .doc-category-pp {
+            background: linear-gradient(to bottom, #F0F7FB 0%, #F8FBFD 100%);
+            padding: 40px;
+            margin: 50px 0 60px 0;
+            border-radius: 16px;
+        }
+        
+        .doc-category-pp h3 {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: #0A1F44;
+            font-size: 2em;
+            font-weight: 800;
+            margin: 0 0 40px 0;
+            padding: 0 0 20px 0;
+            border-bottom: 1px solid #D6E4F0;
+            letter-spacing: -0.02em;
+        }
+        
+        .doc-category-pp h3::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 48px;
+            background: linear-gradient(180deg, #093B75 0%, #1E5A8E 100%);
+            border-radius: 3px;
+            box-shadow: 0 2px 8px rgba(9, 59, 117, 0.3);
+        }
+        
+        .doc-category-pm {
+            background: linear-gradient(to bottom, #F9F5FB 0%, #FCFAFD 100%);
+            padding: 40px;
+            margin: 60px 0 50px 0;
+            position: relative;
+            border-radius: 16px;
+        }
+        
+        .doc-category-pm::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #E5E7EB 50%, transparent 100%);
+        }
+        
+        .doc-category-pm h3 {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: #0A1F44;
+            font-size: 2em;
+            font-weight: 800;
+            margin: 0 0 40px 0;
+            padding: 0 0 20px 0;
+            border-bottom: 1px solid #E8DAF0;
+            letter-spacing: -0.02em;
+        }
+        
+        .doc-category-pm h3::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 48px;
+            background: linear-gradient(180deg, #461068 0%, #6B1B8C 100%);
+            border-radius: 3px;
+            box-shadow: 0 2px 8px rgba(70, 16, 104, 0.3);
+        }
 
         .doc-item {
             background: white;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 8px;
-            border: 2px solid #e9ecef;
+            padding: 24px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border: 1px solid #E5E7EB;
+            transition: all 0.2s ease;
+        }
+        
+        .doc-item:hover {
+            border-color: #CBD5E1;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
         }
 
         .doc-item-title {
             font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 10px;
-            font-size: 1em;
+            color: #0A1F44;
+            margin-bottom: 12px;
+            font-size: 1.05em;
+            letter-spacing: -0.01em;
         }
 
         .doc-item-description {
-            color: #6c757d;
-            font-size: 0.85em;
-            line-height: 1.6;
+            color: #64748B;
+            font-size: 0.9em;
+            line-height: 1.7;
         }
 
         .doc-item-description a {
             color: #093B75;
             text-decoration: none;
-            border-bottom: 1px dotted #093B75;
+            border-bottom: 1px solid #93B5D8;
+            transition: border-color 0.2s ease;
         }
 
         .doc-item-description a:hover {
-            border-bottom-style: solid;
+            border-bottom-color: #093B75;
         }
 
         /* Download buttons */
         .download-btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             background: #461068;
             color: white !important;
-            padding: 10px 20px;
-            border-radius: 6px;
+            padding: 12px 24px;
+            border-radius: 8px;
             text-decoration: none !important;
-            font-size: 0.85em;
+            font-size: 0.9em;
             font-weight: 600;
-            margin-top: 10px;
+            margin-top: 12px;
             transition: all 0.2s ease;
             border: none;
+            box-shadow: 0 2px 4px rgba(70, 16, 104, 0.2);
         }
 
         .download-btn:hover {
             background: #5a1580;
             color: white !important;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 8px rgba(70, 16, 104, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(70, 16, 104, 0.3);
         }
 
         /* PM Tables in Results */
@@ -477,16 +563,20 @@
         }
 
         .summary-box {
-            background: #D5C8FF;
-            border: 2px solid #461068;
+            background: #FAFBFC;
+            border: 1px solid #E5E7EB;
+            border-left: 4px solid #461068;
             border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 30px;
+            padding: 32px;
+            margin-bottom: 50px;
         }
 
         .summary-box h4 {
-            color: #461068;
-            margin-bottom: 15px;
+            color: #0A1F44;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            font-weight: 700;
+            letter-spacing: -0.01em;
         }
 
         .summary-box ul {
@@ -1218,7 +1308,7 @@
         }
 
         function generatePPResults() {
-            let html = '<div class="doc-category"><h3>👤 Personnes Physiques</h3>';
+            let html = '<div class="doc-category-pp"><h3>👤 Personnes Physiques</h3>';
 
             // SECTION 1: Universal documents for ALL PP (blue header)
             html += `
@@ -1293,7 +1383,7 @@
         }
 
         function generatePMResults() {
-            let html = '<div class="doc-category"><h3>🏢 Personnes Morales</h3>';
+            let html = '<div class="doc-category-pm"><h3>🏢 Personnes Morales</h3>';
 
             // Instruction card
             html += `
