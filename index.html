@@ -884,7 +884,7 @@
 
                 <div class="button-group">
                     <button class="btn btn-secondary" onclick="prevQuestion(3)">← Précédent</button>
-                    <button class="btn btn-primary" onclick="generateResults()">Voir mes documents →</button>
+                    <button class="btn btn-primary" onclick="validateAndGenerateResults()">Voir mes documents →</button>
                 </div>
             </div>
 
@@ -927,7 +927,7 @@
         let answers = {
             participants: null,
             type: null,
-            hasNewBE: false,
+            hasNewBE: null,
             pmTypes: []
         };
 
@@ -993,6 +993,8 @@
         }
 
         function handlePPAnswer(answer) {
+            console.log('handlePPAnswer called with:', answer);
+            
             // Update visual state
             const yesCard = document.getElementById('pp-yes-card');
             const noCard = document.getElementById('pp-no-card');
@@ -1003,13 +1005,17 @@
                 noCard.style.borderColor = '#e0e0e0';
                 noCard.style.borderWidth = '2px';
                 answers.hasNewBE = true;
+                console.log('Set hasNewBE to TRUE');
             } else {
                 noCard.style.borderColor = '#7A250C';
                 noCard.style.borderWidth = '3px';
                 yesCard.style.borderColor = '#e0e0e0';
                 yesCard.style.borderWidth = '2px';
                 answers.hasNewBE = false;
+                console.log('Set hasNewBE to FALSE');
             }
+            
+            console.log('Current answers.hasNewBE:', answers.hasNewBE);
         }
 
         // Navigation
@@ -1041,6 +1047,19 @@
         }
 
         function continuePPtoNext() {
+            // Debug logs
+            console.log('continuePPtoNext called');
+            console.log('answers.hasNewBE =', answers.hasNewBE);
+            console.log('Type of hasNewBE:', typeof answers.hasNewBE);
+            
+            // Validate that an answer was selected
+            if (answers.hasNewBE === null || answers.hasNewBE === undefined) {
+                alert('⚠️ Veuillez sélectionner une réponse (OUI ou NON) avant de continuer.');
+                return;
+            }
+            
+            console.log('Validation passed, continuing...');
+            
             // From PP question, go to PM if mix, otherwise to results
             if (answers.type === 'mix') {
                 document.getElementById('q3-pp').classList.remove('active');
@@ -1090,6 +1109,17 @@
         }
 
         // Results generation
+        function validateAndGenerateResults() {
+            // Validate that at least one PM type is selected
+            if (answers.pmTypes.length === 0) {
+                alert('⚠️ Veuillez sélectionner au moins un type d\'entité avant de continuer.');
+                return;
+            }
+            
+            // If validation passes, generate results
+            generateResults();
+        }
+
         function generateResults() {
             currentStep = 4;
             updateProgress();
@@ -1146,8 +1176,34 @@
                     html += '<li>Personnes physiques uniquement</li>';
                 } else if (answers.type === 'pm') {
                     html += '<li>Personnes morales uniquement</li>';
+                    // Add PM types details
+                    if (answers.pmTypes && answers.pmTypes.length > 0) {
+                        html += '<li style="margin-left: 20px; color: #666;">Types d\'entités : ';
+                        const pmTypeLabels = {
+                            'pmSocietesFR': 'Sociétés françaises',
+                            'pmSocietesETR': 'Sociétés étrangères',
+                            'pmFonds': 'Fonds d\'investissement',
+                            'pmAssociations': 'Associations',
+                            'pmFondations': 'Fondations'
+                        };
+                        const selectedLabels = answers.pmTypes.map(type => pmTypeLabels[type]).join(', ');
+                        html += selectedLabels + '</li>';
+                    }
                 } else {
                     html += '<li>Mix personnes physiques et morales</li>';
+                    // Add PM types details for mix case
+                    if (answers.pmTypes && answers.pmTypes.length > 0) {
+                        html += '<li style="margin-left: 20px; color: #666;">Types de PM : ';
+                        const pmTypeLabels = {
+                            'pmSocietesFR': 'Sociétés françaises',
+                            'pmSocietesETR': 'Sociétés étrangères',
+                            'pmFonds': 'Fonds d\'investissement',
+                            'pmAssociations': 'Associations',
+                            'pmFondations': 'Fondations'
+                        };
+                        const selectedLabels = answers.pmTypes.map(type => pmTypeLabels[type]).join(', ');
+                        html += selectedLabels + '</li>';
+                    }
                 }
 
                 if (answers.hasNewBE) html += '<li>Avec nouveaux bénéficiaires effectifs</li>';
@@ -1506,7 +1562,7 @@
             answers = {
                 participants: null,
                 type: null,
-                hasNewBE: false,
+                hasNewBE: null,
                 pmTypes: []
             };
 
