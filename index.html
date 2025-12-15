@@ -793,8 +793,22 @@
         <!-- Wizard Container -->
         <div class="wizard-container">
             <!-- Progress Bar -->
-            <div class="progress-bar">
-                <div class="progress-line" id="progressLine"></div>
+            <!-- Progress bar for simple path (single holder) -->
+            <div class="progress-bar" id="progressBarSimple" style="display: none;">
+                <div class="progress-line" id="progressLineSimple"></div>
+                <div class="step" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Situation</div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Résultats</div>
+                </div>
+            </div>
+
+            <!-- Progress bar for full path (other cases) -->
+            <div class="progress-bar" id="progressBarFull" style="display: none;">
+                <div class="progress-line" id="progressLineFull"></div>
                 <div class="step" data-step="1">
                     <div class="step-number">1</div>
                     <div class="step-label">Situation</div>
@@ -1038,6 +1052,15 @@
             // Store answer
             if (question === 'q1') {
                 answers.participants = value;
+                
+                // Show appropriate progress bar based on selection
+                if (value === 'single-holder') {
+                    document.getElementById('progressBarSimple').style.display = 'flex';
+                    document.getElementById('progressBarFull').style.display = 'none';
+                } else {
+                    document.getElementById('progressBarSimple').style.display = 'none';
+                    document.getElementById('progressBarFull').style.display = 'flex';
+                }
             } else if (question === 'q2') {
                 answers.type = value;
             }
@@ -1176,32 +1199,46 @@
         }
 
         function updateProgress() {
-            // Update step indicators
-            document.querySelectorAll('.step').forEach(step => {
-                const stepNum = parseInt(step.dataset.step);
-                step.classList.remove('active', 'completed');
-                
-                if (stepNum === currentStep) {
-                    step.classList.add('active');
-                } else if (stepNum < currentStep) {
-                    step.classList.add('completed');
-                }
-            });
+            // Determine which progress bar is active
+            const isSimplePath = answers.participants === 'single-holder';
+            const activeProgressBar = isSimplePath ? 'progressBarSimple' : 'progressBarFull';
+            const progressLineId = isSimplePath ? 'progressLineSimple' : 'progressLineFull';
+            
+            // Update step indicators in the active progress bar only
+            const progressBar = document.getElementById(activeProgressBar);
+            if (progressBar) {
+                progressBar.querySelectorAll('.step').forEach(step => {
+                    const stepNum = parseInt(step.dataset.step);
+                    step.classList.remove('active', 'completed');
+                    
+                    if (stepNum === currentStep) {
+                        step.classList.add('active');
+                    } else if (stepNum < currentStep) {
+                        step.classList.add('completed');
+                    }
+                });
 
-            // Update progress line
-            const progress = ((currentStep - 1) / 3) * 100;
-            document.getElementById('progressLine').style.width = progress + '%';
+                // Update progress line
+                const maxSteps = isSimplePath ? 1 : 3; // For 2 steps, max progress is 1. For 4 steps, max is 3.
+                const progress = ((currentStep - 1) / maxSteps) * 100;
+                const progressLine = document.getElementById(progressLineId);
+                if (progressLine) {
+                    progressLine.style.width = progress + '%';
+                }
+            }
         }
 
         function showResults() {
-            currentStep = 4;
+            // Set appropriate step based on path
+            currentStep = answers.participants === 'single-holder' ? 2 : 4;
             document.querySelectorAll('.question-section').forEach(q => q.classList.remove('active'));
             generateResults();
         }
 
         // Results generation
         function generateResults() {
-            currentStep = 4;
+            // Set appropriate step based on path
+            currentStep = answers.participants === 'single-holder' ? 2 : 4;
             updateProgress();
             
             document.querySelectorAll('.question-section').forEach(q => q.classList.remove('active'));
@@ -1226,7 +1263,7 @@
                         <div class="doc-item">
                             <div class="doc-item-title">✓ Pièce d'identité en cours de validité</div>
                             <div class="doc-item-description">
-                                À transmettre si l'identité n'a pas été vérifiée lors de l'ouverture du compte ou si le document précédemment transmis a expiré 
+                                À transmettre uniquement si votre document d'identité a expiré depuis l'ouverture du compte 
                                 (<a href="https://support-fr.qonto.com/hc/fr/articles/38720641656977-Quels-documents-sont-demand%C3%A9s-aux-personnes-physiques-dans-le-cadre-d-une-augmentation-de-capital-en-France#h_01K4A66FEWEJZ47VQXV71EYG1T" target="_blank">voir quels documents d'identité sont acceptés</a>)
                             </div>
                         </div>
@@ -1258,7 +1295,7 @@
                     html += '<li>Personnes morales uniquement</li>';
                     // Add PM types details
                     if (answers.pmTypes && answers.pmTypes.length > 0) {
-                        html += '<li style="margin-left: 20px; color: #666;">Types d\'entités : ';
+                        html += '<li style="margin-left: 20px; list-style: none;">→ Types d\'entités : ';
                         const pmTypeLabels = {
                             'pmSocietesFR': 'Sociétés françaises',
                             'pmSocietesETR': 'Sociétés étrangères',
@@ -1273,7 +1310,7 @@
                     html += '<li>Mix personnes physiques et morales</li>';
                     // Add PM types details for mix case
                     if (answers.pmTypes && answers.pmTypes.length > 0) {
-                        html += '<li style="margin-left: 20px; color: #666;">Types de PM : ';
+                        html += '<li style="margin-left: 20px; list-style: none;">→ Types de PM : ';
                         const pmTypeLabels = {
                             'pmSocietesFR': 'Sociétés françaises',
                             'pmSocietesETR': 'Sociétés étrangères',
@@ -1678,6 +1715,10 @@
                 noCard.style.borderColor = '#e0e0e0';
                 noCard.style.borderWidth = '2px';
             }
+            
+            // Hide both progress bars at restart
+            document.getElementById('progressBarSimple').style.display = 'none';
+            document.getElementById('progressBarFull').style.display = 'none';
 
             // Show first question
             document.getElementById('results').classList.remove('active');
