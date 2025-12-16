@@ -1345,33 +1345,35 @@
         function generatePPResults() {
             let html = '<div class="doc-category-pp"><h3>👤 Personnes Physiques</h3>';
 
-            // SECTION 1: Universal documents for ALL PP (blue header)
+            // SECTION 1: Universal documents for ALL PP (OPTION 1 style - tout dans une card)
             html += `
-                <div style="background: #093B75; color: white; padding: 15px 25px; border-radius: 8px 8px 0 0; margin-bottom: 0;">
-                    <h4 style="margin: 0; font-size: 0.85em; font-weight: 600;">📋 Documents requis pour TOUS les participants personnes physiques</h4>
-                </div>
-            `;
-
-            // Document 1: Déclaration (connected to header)
-            html += `
-                <div class="doc-item" style="margin-top: 0; border-radius: 0;">
-                    <div class="doc-item-title">✓ Déclaration d'origine des fonds</div>
-                    <div class="doc-item-description">
-                        Document à remplir et retourner à Qonto (version personnes physiques). 
-                        À compléter et signer par toutes les personnes physiques qui participent à l'opération.
-                        <br>
-                        <a href="documents/declaration_origine_fonds_PP.pdf" download class="download-btn">📥 Télécharger le formulaire</a>
+                <div style="background: white; border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                    <div style="background: #093B75; color: white; padding: 15px 25px;">
+                        <h4 style="margin: 0; font-size: 0.85em; font-weight: 600;">📋 Documents requis pour TOUS les participants personnes physiques</h4>
                     </div>
-                </div>
-            `;
-
-            // Document 2: Pièce d'identité (last in blue section)
-            html += `
-                <div class="doc-item" style="margin-top: 0; border-radius: 0 0 8px 8px;">
-                    <div class="doc-item-title">✓ Pièce d'identité en cours de validité</div>
-                    <div class="doc-item-description">
-                        À transmettre si l'identité n'a pas été vérifiée lors de l'ouverture du compte ou si le document précédemment transmis a expiré. 
-                        (<a href="https://support-fr.qonto.com/hc/fr/articles/38720641656977-Quels-documents-sont-demand%C3%A9s-aux-personnes-physiques-dans-le-cadre-d-une-augmentation-de-capital-en-France#h_01K4A66FEWEJZ47VQXV71EYG1T" target="_blank">voir quels documents d'identité sont acceptés</a>)
+                    <div style="padding: 25px; background: white;">
+                        <div style="margin-bottom: 25px;">
+                            <div style="font-weight: 600; color: #0A1F44; margin-bottom: 8px; display: flex; align-items: center; gap: 10px;">
+                                <span style="color: #10b981; font-size: 1.2em;">✓</span>
+                                <span>Déclaration d'origine des fonds</span>
+                            </div>
+                            <div style="color: #64748B; font-size: 0.9em; line-height: 1.6; margin-left: 30px;">
+                                Document à remplir et retourner à Qonto (version personnes physiques). 
+                                À compléter et signer par toutes les personnes physiques qui participent à l'opération.
+                                <br>
+                                <a href="documents/declaration_origine_fonds_PP.pdf" download class="download-btn">📥 Télécharger le formulaire</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="font-weight: 600; color: #0A1F44; margin-bottom: 8px; display: flex; align-items: center; gap: 10px;">
+                                <span style="color: #10b981; font-size: 1.2em;">✓</span>
+                                <span>Pièce d'identité en cours de validité</span>
+                            </div>
+                            <div style="color: #64748B; font-size: 0.9em; line-height: 1.6; margin-left: 30px;">
+                                À transmettre si l'identité n'a pas été vérifiée lors de l'ouverture du compte ou si le document précédemment transmis a expiré. 
+                                (<a href="https://support-fr.qonto.com/hc/fr/articles/38720641656977-Quels-documents-sont-demand%C3%A9s-aux-personnes-physiques-dans-le-cadre-d-une-augmentation-de-capital-en-France#h_01K4A66FEWEJZ47VQXV71EYG1T" target="_blank">voir quels documents d'identité sont acceptés</a>)
+                            </div>
+                        </div>
                     </div>
                 </div>
             `;
