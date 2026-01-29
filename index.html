@@ -13,76 +13,77 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            line-height: 1.5;
-            color: #1a1a1a;
-            background: #f5f5f7;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
+            line-height: 1.4;
+            color: #0C0C0D;
+            background: #F7F7F7;
             font-size: 13px;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px 40px;
+            padding: 20px 24px;
         }
 
-        /* Header */
         .header {
-            background: #000000;
-            color: white;
-            padding: 30px 30px;
-            border-radius: 16px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            background: #FFFFFF;
+            padding: 20px 32px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
             text-align: center;
         }
 
         .header h1 {
-            font-size: 1.2em;
-            margin-bottom: 8px;
-            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #0C0C0D;
+            letter-spacing: -0.02em;
         }
 
         .header p {
-            font-size: 0.95em;
-            opacity: 0.95;
+            font-size: 13px;
+            color: #6B6B6B;
+            font-weight: 400;
+            line-height: 1.4;
         }
 
-        /* Wizard Container */
         .wizard-container {
-            background: white;
-            border-radius: 16px;
-            padding: 50px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            min-height: 500px;
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 24px 32px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
         }
 
-        /* Progress Bar */
         .progress-bar {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 50px;
+            margin-bottom: 28px;
             position: relative;
+            padding: 0 24px;
         }
 
         .progress-bar::before {
             content: '';
             position: absolute;
-            top: 20px;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: #e9ecef;
+            top: 18px;
+            left: 24px;
+            right: 24px;
+            height: 2px;
+            background: #F0F0F0;
             z-index: 1;
         }
 
         .progress-line {
             position: absolute;
-            top: 20px;
-            left: 0;
-            height: 3px;
-            background: #7B4DB8;
-            transition: width 0.3s ease;
+            top: 18px;
+            left: 24px;
+            height: 2px;
+            background: #0C0C0D;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 2;
         }
 
@@ -96,104 +97,115 @@
         }
 
         .step-number {
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
-            background: #e9ecef;
-            color: #6c757d;
+            background: #FFFFFF;
+            color: #B0B0B0;
+            border: 2px solid #F0F0F0;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 600;
-            margin-bottom: 10px;
-            transition: all 0.3s ease;
+            font-weight: 500;
+            margin-bottom: 12px;
+            font-size: 14px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .step.active .step-number {
-            background: #7B4DB8;
-            color: white;
-            transform: scale(1.1);
+            background: #0C0C0D;
+            color: #FFFFFF;
+            border-color: #0C0C0D;
         }
 
         .step.completed .step-number {
-            background: #66C8C8;
-            color: white;
+            background: #0C0C0D;
+            color: #FFFFFF;
+            border-color: #0C0C0D;
         }
 
         .step-label {
-            font-size: 0.95em;
-            color: #6c757d;
+            font-size: 13px;
+            color: #B0B0B0;
             text-align: center;
+            font-weight: 400;
         }
 
         .step.active .step-label {
-            color: #7B4DB8;
-            font-weight: 600;
+            color: #0C0C0D;
+            font-weight: 500;
         }
 
-        /* Question Section */
         .question-section {
             display: none;
         }
 
         .question-section.active {
             display: block;
-            animation: fadeIn 0.3s ease;
+            animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .question-title {
-            font-size: 1.15em;
-            color: #1a1a1a;
-            margin-bottom: 10px;
+            font-size: 17px;
+            color: #0C0C0D;
+            margin-bottom: 6px;
             font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.3;
         }
 
         .question-subtitle {
-            color: #666;
+            color: #6B6B6B;
             margin-bottom: 20px;
-            font-size: 0.95em;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.4;
         }
 
-        /* Option Cards */
         .option-card {
-            background: #f8f9fa;
-            border: 3px solid #e9ecef;
-            border-radius: 12px;
-            padding: 18px 20px;
-            margin-bottom: 15px;
+            background: #FFFFFF;
+            border: 1.5px solid #E8E8E8;
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin-bottom: 10px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
         }
 
         .option-card:hover {
-            border-color: #7A250C;
-            background: #E0E0E0;
-            transform: translateX(5px);
+            border-color: #0C0C0D;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
         }
 
         .option-card.selected {
-            border-color: #7B4DB8;
-            border-width: 5px;
-            transform: scale(1.02);
-            box-shadow: 0 8px 25px rgba(70, 16, 104, 0.3);
+            border-color: #0C0C0D;
+            border-width: 2px;
+            padding: 13px 15px;
+            background: #FAFAFA;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
         .option-card.selected::before {
-            content: "✓ Sélectionné";
+            content: '✓';
             position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #7B4DB8;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.95em;
+            top: 16px;
+            right: 16px;
+            width: 22px;
+            height: 22px;
+            background: #0C0C0D;
+            color: #FFFFFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
             font-weight: 600;
         }
 
@@ -204,54 +216,60 @@
         }
 
         .option-title {
-            font-size: 1.08em;
+            font-size: 13px;
             font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 6px;
+            color: #0C0C0D;
+            margin-bottom: 3px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 6px;
+            letter-spacing: -0.01em;
         }
 
         .option-description {
-            color: #1a1a1a;
-            font-size: 0.95em;
-            line-height: 1.5;
+            color: #6B6B6B;
+            font-size: 12px;
+            line-height: 1.4;
         }
 
-        /* Checkboxes */
         .checkbox-group {
-            margin: 30px 0;
+            margin: 16px 0;
         }
 
         .checkbox-card {
-            background: #f8f9fa;
-            border: 2px solid #e9ecef;
+            background: #FFFFFF;
+            border: 1.5px solid #E8E8E8;
             border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 15px;
+            padding: 12px 14px;
+            margin-bottom: 8px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             align-items: flex-start;
-            gap: 15px;
+            gap: 12px;
         }
 
         .checkbox-card:hover {
-            border-color: #7A250C;
-            background: #E0E0E0;
+            border-color: #0C0C0D;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
         }
 
         .checkbox-card.checked {
-            border-color: #7A250C;
-            background: #E0E0E0;
+            border-color: #0C0C0D;
+            border-width: 2px;
+            padding: 11px 13px;
+            background: #FAFAFA;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
         .checkbox-card input[type="checkbox"] {
             width: 20px;
             height: 20px;
             cursor: pointer;
-            margin-top: 3px;
+            accent-color: #0C0C0D;
+            margin-top: 1px;
+            flex-shrink: 0;
         }
 
         .checkbox-content {
@@ -260,29 +278,39 @@
 
         .checkbox-title {
             font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 5px;
+            color: #0C0C0D;
+            margin-bottom: 3px;
+            font-size: 13px;
+            letter-spacing: -0.01em;
         }
 
         .checkbox-description {
-            color: #666;
-            font-size: 0.95em;
+            color: #6B6B6B;
+            font-size: 12px;
+            line-height: 1.4;
         }
 
-        /* Help Box */
         .help-box {
-            background: #E0E0E0;
-            border-left: 5px solid #093B75;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 25px 0;
+            background: #E8F4FD;
+            border: 1px solid #B8DFFB;
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin: 16px 0;
         }
 
         .help-box > strong {
-            color: #093B75;
+            color: #0C0C0D;
             display: block;
-            margin-bottom: 10px;
-            font-size: 0.95em;
+            margin-bottom: 5px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .help-box p {
+            color: #0C0C0D;
+            margin: 3px 0;
+            line-height: 1.4;
+            font-size: 12px;
         }
 
         .help-box p strong {
@@ -290,48 +318,44 @@
             display: inline;
         }
 
-        .help-box p {
-            color: #093B75;
-            margin: 8px 0;
-            line-height: 1.7;
-        }
-
         .help-box ul {
-            margin: 10px 0 10px 20px;
-            color: #093B75;
+            margin: 5px 0 5px 16px;
+            color: #0C0C0D;
+            font-size: 12px;
         }
 
         .help-box li {
-            margin: 5px 0;
+            margin: 3px 0;
         }
 
-        /* Buttons */
         .button-group {
             display: flex;
-            gap: 15px;
-            margin-top: 25px;
+            gap: 10px;
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid #F0F0F0;
         }
 
         .btn {
-            padding: 10px 25px;
+            padding: 10px 20px;
             border-radius: 8px;
-            border: none;
-            font-size: 1em;
-            font-weight: 600;
+            font-size: 13px;
+            font-weight: 500;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            letter-spacing: -0.01em;
+            border: none;
         }
 
         .btn-primary {
-            background: #093B75;
-            color: white;
-            flex: 1;
+            background: #0C0C0D;
+            color: #FFFFFF;
         }
 
-        .btn-primary:hover {
-            background: #7B4DB8;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(70, 16, 104, 0.3);
+        .btn-primary:hover:not(:disabled) {
+            background: #1A1A1C;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-1px);
         }
 
         .btn-primary:disabled {
@@ -341,468 +365,301 @@
         }
 
         .btn-secondary {
-            background: #6c757d;
-            color: white;
+            background: #FFFFFF;
+            color: #0C0C0D;
+            border: 1.5px solid #E8E8E8;
+            padding: 11px 23px;
         }
 
         .btn-secondary:hover {
-            background: #5a6268;
+            background: #FAFAFA;
+            border-color: #0C0C0D;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-1px);
         }
 
-        /* Results Section */
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: #0C0C0D !important;
+            border: none;
+            border-radius: 8px;
+            color: #FFFFFF !important;
+            text-decoration: none;
+            font-size: 10px;
+            font-weight: 500;
+            margin-top: 8px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            letter-spacing: -0.01em;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            background: #1A1A1C !important;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
         .results-section {
             display: none;
         }
 
         .results-section.active {
             display: block;
-            animation: fadeIn 0.5s ease;
+            animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .result-title {
-            font-size: 1.3em;
-            color: #7B4DB8;
-            margin-bottom: 20px;
+            font-size: 20px;
+            color: #0C0C0D;
+            margin-bottom: 8px;
             text-align: center;
+            font-weight: 600;
+            letter-spacing: -0.02em;
         }
 
         .result-subtitle {
             text-align: center;
-            color: #666;
-            margin-bottom: 40px;
-            font-size: 0.95em;
-        }
-
-        .doc-category {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-left: 5px solid #093B75;
-        }
-
-        .doc-category h3 {
-            color: #093B75;
-            margin-bottom: 20px;
-            font-size: 0.95em;
-        }
-        
-        /* Modern, clean PP and PM sections - subtle colored backgrounds */
-        .doc-category-pp {
-            background: linear-gradient(to bottom, #F0F7FB 0%, #F8FBFD 100%);
-            padding: 40px;
-            margin: 50px 0 60px 0;
-            border-radius: 16px;
-        }
-        
-        .doc-category-pp h3 {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            color: #0A1F44;
-            font-size: 2.2em;
-            font-weight: 800;
-            margin: 0 0 40px 0;
-            padding: 0 0 20px 0;
-            border-bottom: 1px solid #D6E4F0;
-            letter-spacing: -0.02em;
-        }
-        
-        .doc-category-pp h3::before {
-            content: '';
-            display: block;
-            width: 6px;
-            height: 48px;
-            background: linear-gradient(180deg, #093B75 0%, #1E5A8E 100%);
-            border-radius: 3px;
-            box-shadow: 0 2px 8px rgba(9, 59, 117, 0.3);
-        }
-        
-        .doc-category-pm {
-            background: linear-gradient(to bottom, #F9F5FB 0%, #FCFAFD 100%);
-            padding: 40px;
-            margin: 60px 0 50px 0;
-            position: relative;
-            border-radius: 16px;
-        }
-        
-        .doc-category-pm::before {
-            content: '';
-            position: absolute;
-            top: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent 0%, #E5E7EB 50%, transparent 100%);
-        }
-        
-        .doc-category-pm h3 {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            color: #0A1F44;
-            font-size: 2.2em;
-            font-weight: 800;
-            margin: 0 0 40px 0;
-            padding: 0 0 20px 0;
-            border-bottom: 1px solid #E8DAF0;
-            letter-spacing: -0.02em;
-        }
-        
-        .doc-category-pm h3::before {
-            content: '';
-            display: block;
-            width: 6px;
-            height: 48px;
-            background: linear-gradient(180deg, #7B4DB8 0%, #6B1B8C 100%);
-            border-radius: 3px;
-            box-shadow: 0 2px 8px rgba(70, 16, 104, 0.3);
-        }
-
-        .doc-item {
-            background: white;
-            padding: 24px;
-            margin: 20px 0;
-            border-radius: 12px;
-            border: 1px solid #E5E7EB;
-            transition: all 0.2s ease;
-        }
-        
-        .doc-item:hover {
-            border-color: #CBD5E1;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transform: translateY(-2px);
-        }
-
-        .doc-item-title {
-            font-weight: 600;
-            color: #000000;
-            margin-bottom: 12px;
-            font-size: 1.15em;
-            letter-spacing: -0.01em;
-        }
-
-        .doc-item-description {
-            color: #64748B;
-            font-size: 1em;
-            line-height: 1.7;
-        }
-
-        .doc-item-description a {
-            color: #093B75;
-            text-decoration: none;
-            border-bottom: 1px solid #93B5D8;
-            transition: border-color 0.2s ease;
-        }
-
-        .doc-item-description a:hover {
-            border-bottom-color: #093B75;
-        }
-
-        /* Download buttons */
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #000000;
-            color: white !important;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none !important;
-            font-size: 1em;
-            font-weight: 600;
-            margin-top: 12px;
-            transition: all 0.2s ease;
-            border: none;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .download-btn:hover {
-            background: #333333;
-            color: white !important;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        /* PM Tables in Results */
-        .pm-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .pm-table thead {
-            background: #093B75;
-            color: white;
-        }
-
-        .pm-table th {
-            padding: 15px;
-            text-align: left;
-            font-weight: 600;
-            font-size: 0.95em;
-        }
-
-        .pm-table td {
-            padding: 15px;
-            border-bottom: 1px solid #e9ecef;
-            vertical-align: top;
-        }
-
-        .pm-table tbody tr:hover {
-            background: #f8f9fa;
-        }
-
-        .pm-table .doc-list {
-            margin: 5px 0;
+            color: #6B6B6B;
+            margin-bottom: 28px;
+            font-size: 13px;
+            line-height: 1.4;
         }
 
         .summary-box {
-            background: #FAFBFC;
-            border: 1px solid #E5E7EB;
-            border-left: 4px solid #7B4DB8;
-            border-radius: 12px;
-            padding: 32px;
-            margin-bottom: 50px;
+            background: #FAFAFA;
+            border: 1px solid #E8E8E8;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 24px;
         }
 
         .summary-box h4 {
-            color: #0A1F44;
-            margin-bottom: 20px;
-            font-size: 1.2em;
-            font-weight: 700;
+            font-size: 14px;
+            font-weight: 600;
+            color: #0C0C0D;
+            margin-bottom: 8px;
             letter-spacing: -0.01em;
         }
 
         .summary-box ul {
-            margin-left: 20px;
-            color: #7B4DB8;
+            list-style: none;
+            padding: 0;
         }
 
         .summary-box li {
-            margin: 8px 0;
+            color: #6B6B6B;
+            font-size: 12px;
+            padding: 4px 0;
+            padding-left: 20px;
+            position: relative;
         }
 
-        @media (max-width: 768px) {
-            .wizard-container {
-                padding: 30px 20px;
+        .summary-box li::before {
+            content: '•';
+            position: absolute;
+            left: 8px;
+            color: #0C0C0D;
+            font-weight: bold;
+        }
+
+        .doc-category {
+            background: #FFFFFF;
+            border: 1px solid #E8E8E8;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+        }
+
+        .doc-category h3 {
+            color: #0C0C0D;
+            margin-bottom: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .doc-category-pp {
+            background: #FFFFFF;
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 10px;
+            border: 1px solid #E8E8E8;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+        }
+
+        .doc-category-pp h3 {
+            color: #0C0C0D;
+            font-size: 15px;
+            font-weight: 600;
+            margin: 0 0 16px 0;
+            padding: 0 0 12px 0;
+            border-bottom: 1px solid #F0F0F0;
+            letter-spacing: -0.02em;
+        }
+
+        .doc-category-pm {
+            background: #FFFFFF;
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 10px;
+            border: 1px solid #E8E8E8;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+        }
+
+        .doc-category-pm h3 {
+            color: #0C0C0D;
+            font-size: 15px;
+            font-weight: 600;
+            margin: 0 0 16px 0;
+            padding: 0 0 12px 0;
+            border-bottom: 1px solid #F0F0F0;
+            letter-spacing: -0.02em;
+        }
+
+        .doc-item {
+            background: #FAFAFA;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #F0F0F0;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .doc-item:hover {
+            border-color: #E8E8E8;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transform: translateY(-1px);
+        }
+
+        .doc-item-title {
+            font-weight: 500;
+            color: #0C0C0D;
+            margin-bottom: 5px;
+            font-size: 11px;
+            letter-spacing: -0.01em;
+        }
+
+        .doc-item-description {
+            color: #6B6B6B;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .doc-item-description a {
+            color: #3275C4;
+            text-decoration: underline;
+            text-decoration-color: #B8DFFB;
+            transition: all 0.2s ease;
+        }
+
+        .doc-item-description a:hover {
+            color: #1E5A96;
+            text-decoration-color: #3275C4;
+        }
+
+        /* Empêcher le soulignage sur les boutons download-btn */
+        .doc-item-description a.download-btn,
+        a.download-btn {
+            text-decoration: none !important;
+        }
+
+        .doc-item-description a.download-btn:hover,
+        a.download-btn:hover {
+            text-decoration: none !important;
+        }
+
+        .doc-category-pp, .doc-category-pm {
+            min-width: 0;
+            overflow: hidden;
+            word-wrap: break-word;
+        }
+
+        .doc-category-pp > *, .doc-category-pm > * {
+            max-width: 100%;
+            overflow-wrap: break-word;
+        }
+
+        [style*="display: grid"] > div {
+            min-width: 0;
+            overflow: hidden;
+        }
+
+        @media print {
+            body {
+                background: white;
             }
 
-            .header h1 {
-                font-size: 1.1em;
+            .wizard-container {
+                box-shadow: none;
             }
 
             .button-group {
-                flex-direction: column;
+                display: none;
             }
 
-            /* Stack PP and PM vertically on mobile */
-            div[style*="grid-template-columns: 1fr 1fr"][style*="gap: 30px"] {
-                grid-template-columns: 1fr !important;
-            }
-
-            /* Stack PM table columns vertically on mobile */
-            div[style*="grid-template-columns: 1fr 1fr"][style*="gap: 20px"] {
-                grid-template-columns: 1fr !important;
-                gap: 15px !important;
+            .progress-bar {
+                display: none;
             }
         }
 
-        /* Print/PDF specific styles */
-        @media print {
-            /* Hide ALL navigation and interactive elements */
-            .header,
-            .progress-tracker,
-            .progress-bar,
-            .progress-line,
-            .step-label,
-            .question-section,
-            button,
-            .btn,
-            .result-subtitle,
-            .container > .header,
-            .step-indicator {
-                display: none !important;
-            }
-
-            /* Show only results */
-            .results-section {
-                display: block !important;
-                max-width: 100%;
-                padding: 0;
-                margin: 0;
-            }
-
-            /* Optimize page layout */
-            body {
-                margin: 0;
-                padding: 15px;
-                background: white;
-                font-size: 12pt;
-            }
-
+        @media (max-width: 768px) {
             .container {
-                padding: 0 !important;
-                margin: 0 !important;
+                padding: 24px 16px;
             }
 
-            /* Title styling for print */
-            .result-title {
-                color: #093B75;
-                font-size: 22pt;
-                margin-bottom: 15pt;
-                margin-top: 0;
-                page-break-after: avoid;
-                font-weight: 700;
+            .wizard-container {
+                padding: 24px 20px;
             }
 
-            /* Summary box styling */
-            .summary-box {
-                background: #f8f9fa !important;
-                border: 1pt solid #dee2e6 !important;
-                padding: 12pt !important;
-                margin-bottom: 15pt !important;
-                border-radius: 4pt;
+            .header {
+                padding: 24px 20px;
             }
 
-            .summary-box h4 {
-                font-size: 15pt !important;
-                margin-top: 0 !important;
-                margin-bottom: 8pt !important;
+            .doc-category-pp, .doc-category-pm {
+                padding: 16px;
             }
 
-            .summary-box ul {
-                margin: 0 !important;
-                padding-left: 20pt !important;
+            .progress-bar {
+                padding: 0 12px;
             }
 
-            .summary-box li {
-                font-size: 11pt !important;
-                margin-bottom: 4pt !important;
+            .progress-bar::before {
+                left: 12px;
+                right: 12px;
             }
 
-            /* Doc category headers */
-            .doc-category h3,
-            div[style*="background: #2F95A0"],
-            div[style*="background: #3275C4"],
-            div[style*="background: #7B4DB8"],
-            div[style*="background: #F0E060"],
-            div[style*="background: #E0E0E0"] {
-                background: #f0f0f0 !important;
-                color: #000 !important;
-                padding: 10pt !important;
-                margin-top: 12pt !important;
-                margin-bottom: 0 !important;
-                font-size: 13pt !important;
-                font-weight: 700 !important;
-                border: 1pt solid #ddd !important;
-                border-bottom: none !important;
+            .progress-line {
+                left: 12px;
             }
 
-            /* Doc items styling */
-            .doc-item {
-                background: white !important;
-                border: 1pt solid #ddd !important;
-                padding: 10pt !important;
-                margin-bottom: 10pt !important;
-                page-break-inside: avoid;
+            .step-label {
+                font-size: 12px;
             }
 
-            .doc-item-title {
-                font-size: 12pt !important;
-                font-weight: 600 !important;
-                margin-bottom: 6pt !important;
-                color: #000 !important;
+            .question-title {
+                font-size: 16px;
             }
 
-            .doc-item-description {
-                font-size: 11pt !important;
-                color: #333 !important;
-                line-height: 1.4 !important;
+            .option-card {
+                padding: 16px 18px;
             }
 
-            /* Prevent page breaks inside important sections */
-            .doc-item,
-            .doc-category,
-            .summary-box,
-            .pm-table {
-                page-break-inside: avoid;
+            .option-card.selected {
+                padding: 15px 17px;
             }
 
-            /* Links styling for print */
-            a {
-                color: #093B75 !important;
-                text-decoration: underline !important;
-            }
-
-            /* Print URLs after links but make them smaller */
-            a[href]:after {
-                content: " (" attr(href) ")";
-                font-size: 7pt;
-                color: #666;
-                word-break: break-all;
-            }
-
-            /* Table styling */
-            .pm-table {
-                width: 100%;
-                border-collapse: collapse;
-                margin-top: 10pt;
-            }
-
-            .pm-table th,
-            .pm-table td {
-                border: 1pt solid #ddd !important;
-                padding: 8pt !important;
-                font-size: 9pt !important;
-            }
-
-            .pm-table th {
-                background: #f0f0f0 !important;
-                font-weight: 700 !important;
-            }
-
-            /* Help boxes */
-            .help-box {
-                background: #fffbea !important;
-                border: 1pt solid #ffd900 !important;
-                padding: 10pt !important;
-                margin: 10pt 0 !important;
-                font-size: 9pt !important;
-            }
-
-            /* Remove all shadows and effects */
-            * {
-                box-shadow: none !important;
-                text-shadow: none !important;
-            }
-
-            /* Force consistent margins */
-            h3, h4 {
-                page-break-after: avoid;
-            }
-
-            /* Emoji and icons - keep them visible */
-            .doc-item-title::before,
-            .summary-box h4::before {
-                display: inline !important;
-            }
-
-            /* Keep PP/PM side by side in print (only main container) */
-            div[style*="grid-template-columns"][style*="gap: 30px"] {
-                display: grid !important;
-                grid-template-columns: 1fr 1fr !important;
-                gap: 20pt !important;
-                page-break-inside: avoid;
+            body {
+                font-size: 13px;
             }
         }
     </style>
     <!-- jsPDF library for PDF generation with clickable links -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -829,7 +686,7 @@
             </div>
 
             <!-- Progress bar for full path (other cases) -->
-            <div class="progress-bar" id="progressBarFull" style="display: none;">
+            <div class="progress-bar" id="progressBarFull">
                 <div class="progress-line" id="progressLineFull"></div>
                 <div class="step" data-step="1">
                     <div class="step-number">1</div>
@@ -856,17 +713,17 @@
 
                 <div class="option-card" onclick="selectOption('q1', 'single-holder')">
                     <input type="radio" name="participants" value="single-holder" id="single-holder">
-                    <div class="option-title">👤 Un seul participant : moi, titulaire du compte</div>
+                    <div class="option-title">👤 Un seul participant : l'associé unique personne physique</div>
                     <div class="option-description">
-                        <strong>✅ Cas simplifié :</strong> Je suis le seul à participer à l'augmentation de capital ET je suis le titulaire du compte Qonto
+                        SASU/EURL - L'associé détient 100% du capital avant et après l'opération
                     </div>
                 </div>
 
                 <div class="option-card" onclick="selectOption('q1', 'other')">
                     <input type="radio" name="participants" value="other" id="other">
-                    <div class="option-title">👥 Autre cas</div>
+                    <div class="option-title">👥 Toute autre configuration</div>
                     <div class="option-description">
-                        Tous les autres cas (participant non-titulaire, plusieurs participants...)
+                        Toute situation où le participant n'est pas uniquement l'associé unique personne physique
                     </div>
                 </div>
 
@@ -899,7 +756,7 @@
                 </div>
 
                 <div class="button-group">
-                    <button class="btn btn-secondary" onclick="prevQuestion(2)">← Précédent</button>
+                    <button class="btn btn-secondary" onclick="prevQuestion(2)">⬅️ Précédent</button>
                     <button class="btn btn-primary" onclick="nextQuestion(2)" id="btn-q2" disabled>Suivant →</button>
                 </div>
             </div>
@@ -919,41 +776,41 @@
                     </ul>
                 </div>
 
-                <div style="background: #fff; border: 1px solid #E5E7EB; border-radius: 12px; padding: 30px; margin: 30px 0;">
-                    <h3 style="color: #7B4DB8; margin-bottom: 20px; font-size: 0.95em;">📋 Votre situation</h3>
-                    <p style="font-size: 0.95em; color: #1a1a1a; margin-bottom: 25px;">
+                <div style="background: #fff; border: 1px solid #E5E7EB; border-radius: 12px; padding: 24px; margin: 24px 0;">
+                    <h3 style="color: #0C0C0D; margin-bottom: 16px; font-size: 0.9em;">📋 Votre situation</h3>
+                    <p style="font-size: 0.9em; color: #1a1a1a; margin-bottom: 20px;">
                         Est-ce qu'un ou plusieurs participants vont <strong>devenir NOUVEAUX bénéficiaires effectifs</strong> de la société ?
                     </p>
 
-                    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 25px;">
-                        <strong style="color: #7B4DB8; display: block; margin-bottom: 10px;">⚠️ "Nouveau" bénéficiaire effectif signifie :</strong>
-                        <p style="color: #666; margin: 0; line-height: 1.7;">
+                    <div style="background: #f8f9fa; padding: 16px; border-radius: 8px; margin-bottom: 20px;">
+                        <strong style="color: #0C0C0D; display: block; margin-bottom: 8px;">⚠️ "Nouveau" bénéficiaire effectif signifie :</strong>
+                        <p style="color: #666; margin: 0; line-height: 1.6; font-size: 0.95em;">
                             La personne n'était <strong>PAS</strong> bénéficiaire effectif avant l'augmentation de capital, 
                             et elle le devient après l'opération (en atteignant l'un des critères ci-dessus).
                         </p>
                     </div>
 
                     <!-- Radio buttons for YES/NO -->
-                    <div style="margin: 20px 0;">
-                        <div style="background: #C8FFEC; border: 2px solid #e0e0e0; border-radius: 10px; padding: 20px; margin-bottom: 15px; cursor: pointer; transition: all 0.3s ease;" onclick="selectPPAnswer('yes')" id="pp-yes-card">
+                    <div style="margin: 16px 0;">
+                        <div style="background: #FFFFFF; border: 2px solid #e0e0e0; border-radius: 10px; padding: 16px; margin-bottom: 12px; cursor: pointer; transition: all 0.3s ease;" onclick="selectPPAnswer('yes')" id="pp-yes-card">
                             <label style="display: flex; align-items: center; cursor: pointer; margin: 0;">
                                 <input type="radio" name="ppNewBE" value="yes" id="ppNewBEYes" style="width: 24px; height: 24px; margin-right: 15px; cursor: pointer;" onchange="handlePPAnswer('yes')">
-                                <span style="font-size: 0.95em; font-weight: 600; color: #705208;">✅ OUI, un ou plusieurs participants vont devenir nouveaux BE</span>
+                                <span style="font-size: 0.9em; font-weight: 600; color: #0C0C0D;">✅ OUI, un ou plusieurs participants vont devenir nouveaux bénéficiaire effectif</span>
                             </label>
                         </div>
 
-                        <div style="background: #FFC9A6; border: 2px solid #e0e0e0; border-radius: 10px; padding: 20px; cursor: pointer; transition: all 0.3s ease;" onclick="selectPPAnswer('no')" id="pp-no-card">
+                        <div style="background: #FFFFFF; border: 2px solid #e0e0e0; border-radius: 10px; padding: 16px; cursor: pointer; transition: all 0.3s ease;" onclick="selectPPAnswer('no')" id="pp-no-card">
                             <label style="display: flex; align-items: center; cursor: pointer; margin: 0;">
                                 <input type="radio" name="ppNewBE" value="no" id="ppNewBENo" style="width: 24px; height: 24px; margin-right: 15px; cursor: pointer;" onchange="handlePPAnswer('no')">
-                                <span style="font-size: 0.95em; font-weight: 600; color: #7A250C;">❌ NON, aucun participant ne devient nouveau BE</span>
+                                <span style="font-size: 0.9em; font-weight: 600; color: #0C0C0D;">❌ NON, aucun participant ne devient nouveau bénéficiaire effectif</span>
                             </label>
                         </div>
                     </div>
                 </div>
 
                 <div class="button-group">
-                    <button class="btn btn-secondary" onclick="prevQuestion(3)">← Précédent</button>
-                    <button class="btn btn-primary" id="ppContinueBtn" onclick="continuePPtoNext()" disabled style="opacity: 0.5; cursor: not-allowed;">Continuer →</button>
+                    <button class="btn btn-secondary" onclick="prevQuestion(3)">⬅️ Précédent</button>
+                    <button class="btn btn-primary" id="ppContinueBtn" onclick="continuePPtoNext()" disabled>Continuer →</button>
                 </div>
             </div>
 
@@ -967,7 +824,7 @@
                         <input type="checkbox" id="pmSocietesFR">
                         <div class="checkbox-content">
                             <div class="checkbox-title">🇫🇷 Sociétés françaises classiques</div>
-                            <div class="checkbox-description">SAS, SARL, SA, etc. immatriculées en France</div>
+                            <div class="checkbox-description">SAS, SARL, SA, etc. immatriculées au RCS</div>
                         </div>
                     </div>
 
@@ -1006,8 +863,8 @@
                 </div>
 
                 <div class="button-group">
-                    <button class="btn btn-secondary" onclick="prevQuestion(3)">← Précédent</button>
-                    <button class="btn btn-primary" id="pmContinueBtn" onclick="generateResults()" disabled style="opacity: 0.5; cursor: not-allowed;">Voir mes documents →</button>
+                    <button class="btn btn-secondary" onclick="prevQuestion(3)">⬅️ Précédent</button>
+                    <button class="btn btn-primary" id="pmContinueBtn" onclick="generateResults()" disabled>Voir mes documents →</button>
                 </div>
             </div>
 
@@ -1017,29 +874,62 @@
                 <p class="result-subtitle">Voici la liste personnalisée des documents à fournir pour votre augmentation de capital</p>
 
                 <div id="resultsContent"></div>
+                <!-- Section document obligatoire - Nouveau design avec étapes -->
+                <div style="background: #FAFAFA; border: 1px solid #E8E8E8; border-radius: 12px; padding: 28px; margin-top: 32px;">
+                    <h3 style="font-size: 16px; font-weight: 600; color: #0C0C0D; margin: 0 0 8px 0; letter-spacing: -0.02em;">
+                        🎯 Dernière étape : préparez votre envoi
+                    </h3>
+                    
+                    <p style="color: #6B6B6B; font-size: 14px; line-height: 1.5; margin: 0 0 24px 0;">
+                        Pour que votre dossier soit traité rapidement, nous vous demandons de joindre cette liste à vos documents.
+                    </p>
 
-                <div style="display: flex; gap: 15px; margin-top: 30px; align-items: center;">
-                    <button class="btn btn-secondary" onclick="goBackFromResults()" style="flex: 1;">← Retour en arrière</button>
-                    <button onclick="printResults()" style="
-                        background: #000000;
-                        color: white;
-                        border: none;
-                        padding: 10px 25px;
-                        border-radius: 8px;
-                        font-size: 1em;
-                        font-weight: 600;
-                        cursor: pointer;
-                        display: inline-flex;
-                        align-items: center;
-                        justify-content: center;
-                        gap: 8px;
-                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-                        transition: all 0.3s ease;
-                        flex: 1;
-                    " onmouseover="this.style.background='#333333'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.4)'" onmouseout="this.style.background='#000000'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.3)'">
-                        📥 Télécharger ma liste de documents
-                    </button>
-                    <button class="btn btn-primary" onclick="restart()" style="flex: 1; background: #093B75;">🔄 Retour au début</button>
+                    <!-- Étape 1 : Télécharger -->
+                    <div style="display: flex; gap: 16px; margin-bottom: 20px; align-items: start;">
+                        <div style="background: #0C0C0D; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 16px; flex-shrink: 0;">
+                            1
+                        </div>
+                        <div style="flex: 1; padding-top: 4px;">
+                            <div style="font-weight: 600; color: #0C0C0D; font-size: 14px; margin-bottom: 8px;">Téléchargez votre liste récapitulative</div>
+                            <div style="color: #6B6B6B; font-size: 13px; line-height: 1.5; margin-bottom: 12px;">
+                                Cette liste contient tous les documents requis pour votre dossier.
+                            </div>
+                            <button onclick="downloadPDF()" style="background: #0C0C0D; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease;" onmouseover="this.style.background='#1A1A1C'; this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#0C0C0D'; this.style.transform='translateY(0)'">
+                                📥 Télécharger la liste récapitulative
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Étape 2 : Joindre -->
+                    <div style="display: flex; gap: 16px; margin-bottom: 20px; align-items: start;">
+                        <div style="background: #0C0C0D; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 16px; flex-shrink: 0;">
+                            2
+                        </div>
+                        <div style="flex: 1; padding-top: 8px;">
+                            <div style="font-weight: 600; color: #0C0C0D; font-size: 14px; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                                <span>📎</span>
+                                <span>Joignez cette liste à tous les documents requis</span>
+                            </div>
+                            <div style="color: #6B6B6B; font-size: 13px; line-height: 1.5;">
+                                Envoyez l'ensemble des documents à l'adresse <a href="mailto:qonto-ak@qonto.com" style="color: #3275C4; text-decoration: none; font-weight: 500;">qonto-ak@qonto.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Note d'information dans encadré blanc -->
+                    <div style="background: white; border: 1px solid #E8E8E8; border-radius: 8px; padding: 16px; margin: 0;">
+                        <div style="display: flex; align-items: start; gap: 10px;">
+                            <span style="font-size: 18px;">💡</span>
+                            <div style="color: #6B6B6B; font-size: 13px; line-height: 1.5;">
+                                Un dossier incomplet entraînera malheureusement des délais supplémentaires dans le traitement de votre demande.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 15px; margin-top: 24px; align-items: center;">
+                    <button class="btn btn-secondary" onclick="goBackFromResults()" id="backFromResultsBtn">⬅️ Retour en arrière</button>
+                    <button class="btn btn-secondary" onclick="restart()">🔄 Retour au début</button>
                 </div>
             </div>
         </div>
@@ -1084,6 +974,9 @@
                     document.getElementById('progressBarSimple').style.display = 'none';
                     document.getElementById('progressBarFull').style.display = 'flex';
                 }
+                
+                // Update progress to apply active styles to step 1
+                updateProgress();
             } else if (question === 'q2') {
                 answers.type = value;
             }
@@ -1287,35 +1180,48 @@
                     <div class="summary-box">
                         <h4>📊 Votre situation</h4>
                         <ul>
-                            <li>Participant unique (titulaire du compte)</li>
-                            <li>Cas simplifié avec documents minimaux</li>
+                            <li>Associé unique personne physique (SASU/EURL)</li>
+                            <li>Détention de 100% du capital avant et après l'opération</li>
                         </ul>
                     </div>
 
-                    <div class="doc-category">
-                        <h3>📋 Documents à fournir</h3>
-                        
-                        <div class="doc-item">
-                            <div class="doc-item-title">✓ Pièce d'identité en cours de validité</div>
-                            <div class="doc-item-description">
-                                À transmettre uniquement si votre document d'identité a expiré depuis l'ouverture du compte 
-                                (<a href="https://support-fr.qonto.com/hc/fr/articles/38720641656977-Quels-documents-sont-demand%C3%A9s-aux-personnes-physiques-dans-le-cadre-d-une-augmentation-de-capital-en-France#h_01K4A66FEWEJZ47VQXV71EYG1T" target="_blank">voir quels documents d'identité sont acceptés</a>)
-                            </div>
+                    <div style="background: white; border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                        <div style="background: #3275C4; color: white; padding: 10px 16px;">
+                            <h4 style="margin: 0; font-size: 0.95em; font-weight: 600;">📋 Documents à fournir</h4>
                         </div>
-
-                        <div class="doc-item">
-                            <div class="doc-item-title">✓ Déclaration d'origine des fonds</div>
-                            <div class="doc-item-description">
-                                Document à remplir et retourner à Qonto
-                                <br>
-                                <a href="documents/declaration_origine_fonds_PP.pdf" download class="download-btn">📥 Télécharger le formulaire</a>
+                        <div style="padding: 16px; background: white;">
+                            <div style="margin-bottom: 16px;">
+                                <div style="font-weight: 600; color: #000000; margin-bottom: 5px; display: flex; align-items: center; gap: 8px; font-size: 11px;">
+                                    <span style="color: #000000; font-size: 1.2em;">✓</span>
+                                    <span>Pièce d'identité en cours de validité</span>
+                                </div>
+                                <div style="color: #64748B; font-size: 11px; line-height: 1.4; margin-left: 26px;">
+                                    À transmettre uniquement si votre document d'identité a expiré depuis l'ouverture du compte
+                                    <br>
+                                    <a href="https://support-fr.qonto.com/hc/fr/articles/38720641656977-Quels-documents-sont-demand%C3%A9s-aux-personnes-physiques-dans-le-cadre-d-une-augmentation-de-capital-en-France#h_01K4A66FEWEJZ47VQXV71EYG1T" target="_blank" style="color: #3275C4;">Voir quels documents d'identité sont acceptés</a>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="doc-item">
-                            <div class="doc-item-title">✓ Preuve documentaire de l'origine des fonds</div>
-                            <div class="doc-item-description">
-                                (<a href="https://support-fr.qonto.com/hc/fr/articles/38738891662737-Quels-documents-peuvent-%C3%AAtre-fournis-comme-preuve-de-l-origine-des-fonds#h_01K4AXEVBCTV7ZRXK5DX9P790V" target="_blank">voir quels documents justificatifs sont acceptés</a>)
+                            <div style="margin-bottom: 16px;">
+                                <div style="font-weight: 600; color: #000000; margin-bottom: 5px; display: flex; align-items: center; gap: 8px; font-size: 11px;">
+                                    <span style="color: #000000; font-size: 1.2em;">✓</span>
+                                    <span>Déclaration d'origine des fonds</span>
+                                </div>
+                                <div style="color: #64748B; font-size: 11px; line-height: 1.4; margin-left: 26px;">
+                                    Formulaire à compléter et signer, puis à retourner à Qonto
+                                    <br>
+                                    <a href="documents/declaration_origine_fonds_PP.pdf" download class="download-btn" style="font-size: 10px;">📥 Télécharger le formulaire</a>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div style="font-weight: 600; color: #000000; margin-bottom: 5px; display: flex; align-items: center; gap: 8px; font-size: 11px;">
+                                    <span style="color: #000000; font-size: 1.2em;">✓</span>
+                                    <span>Preuve documentaire de l'origine des fonds</span>
+                                </div>
+                                <div style="color: #64748B; font-size: 11px; line-height: 1.4; margin-left: 26px;">
+                                    <a href="https://support-fr.qonto.com/hc/fr/articles/38738891662737-Quels-documents-peuvent-%C3%AAtre-fournis-comme-preuve-de-l-origine-des-fonds#h_01K4AXEVBCTV7ZRXK5DX9P790V" target="_blank" style="color: #3275C4;">Voir quels documents justificatifs sont acceptés</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1367,7 +1273,7 @@
                     html += generatePPResults();
                 } else if (answers.type === 'mix') {
                     // For mix: put PP and PM side by side in two columns
-                    html += '<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; align-items: start;">';
+                    html += '<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 16px; align-items: start;">';
                     html += '<div>' + generatePPResults() + '</div>';
                     html += '<div>' + generatePMResults() + '</div>';
                     html += '</div>';
@@ -1380,6 +1286,16 @@
             }
 
             document.getElementById('resultsContent').innerHTML = html;
+            
+            // Hide "Retour en arrière" button for single-holder path (only 1 step before results)
+            const backBtn = document.getElementById('backFromResultsBtn');
+            if (backBtn) {
+                if (answers.participants === 'single-holder') {
+                    backBtn.style.display = 'none';
+                } else {
+                    backBtn.style.display = 'inline-block';
+                }
+            }
         }
 
         function generatePPResults() {
@@ -1387,69 +1303,72 @@
 
             // SECTION 1: Universal documents for ALL PP (OPTION 1 style - tout dans une card)
             html += `
-                <div style="background: white; border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 30px;">
-                    <div style="background: #3275C4; color: white; padding: 15px 25px;">
+                <div style="background: white; border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                    <div style="background: #3275C4; color: white; padding: 10px 16px;">
                         <h4 style="margin: 0; font-size: 0.95em; font-weight: 600;">📋 Documents requis pour TOUS les participants personnes physiques</h4>
                     </div>
-                    <div style="padding: 25px; background: white;">
-                        <div style="margin-bottom: 25px;">
-                            <div style="font-weight: 600; color: #000000; margin-bottom: 8px; display: flex; align-items: center; gap: 10px;">
-                                <span style="color: #000000; font-size: 1.3em;">✓</span>
+                    <div style="padding: 16px; background: white;">
+                        <div style="margin-bottom: 16px;">
+                            <div style="font-weight: 600; color: #000000; margin-bottom: 5px; display: flex; align-items: center; gap: 8px; font-size: 11px;">
+                                <span style="color: #000000; font-size: 1.2em;">✓</span>
                                 <span>Déclaration d'origine des fonds</span>
                             </div>
-                            <div style="color: #64748B; font-size: 1em; line-height: 1.6; margin-left: 30px;">
-                                Document à remplir et retourner à Qonto (version personnes physiques). 
-                                À compléter et signer par toutes les personnes physiques qui participent à l'opération.
+                            <div style="color: #64748B; font-size: 11px; line-height: 1.4; margin-left: 26px;">
+                                Ce formulaire doit être complété et signé par <strong>chaque personne physique</strong> qui participe à l'opération (chaque participant remplit son propre formulaire).
                                 <br>
-                                <a href="documents/declaration_origine_fonds_PP.pdf" download class="download-btn">📥 Télécharger le formulaire</a>
+                                <a href="documents/declaration_origine_fonds_PP.pdf" download class="download-btn" style="font-size: 10px;">📥 Télécharger le formulaire</a>
                             </div>
                         </div>
                         <div>
-                            <div style="font-weight: 600; color: #000000; margin-bottom: 8px; display: flex; align-items: center; gap: 10px;">
-                                <span style="color: #000000; font-size: 1.3em;">✓</span>
+                            <div style="font-weight: 600; color: #000000; margin-bottom: 5px; display: flex; align-items: center; gap: 8px; font-size: 11px;">
+                                <span style="color: #000000; font-size: 1.2em;">✓</span>
                                 <span>Pièce d'identité en cours de validité</span>
                             </div>
-                            <div style="color: #64748B; font-size: 1em; line-height: 1.6; margin-left: 30px;">
-                                À transmettre si l'identité n'a pas été vérifiée lors de l'ouverture du compte ou si le document précédemment transmis a expiré. 
-                                (<a href="https://support-fr.qonto.com/hc/fr/articles/38720641656977-Quels-documents-sont-demand%C3%A9s-aux-personnes-physiques-dans-le-cadre-d-une-augmentation-de-capital-en-France#h_01K4A66FEWEJZ47VQXV71EYG1T" target="_blank">voir quels documents d'identité sont acceptés</a>)
+                            <div style="color: #64748B; font-size: 11px; line-height: 1.4; margin-left: 26px;">
+                                À transmettre si l'identité n'a pas été vérifiée lors de l'ouverture du compte ou si le document précédemment transmis a expiré.
+                                <br>
+                                <a href="https://support-fr.qonto.com/hc/fr/articles/38720641656977-Quels-documents-sont-demand%C3%A9s-aux-personnes-physiques-dans-le-cadre-d-une-augmentation-de-capital-en-France#h_01K4A66FEWEJZ47VQXV71EYG1T" target="_blank" style="color: #3275C4;">Voir quels documents d'identité sont acceptés</a>
                             </div>
                         </div>
                     </div>
                 </div>
             `;
 
-            // SECTION 2: Additional documents for ≥25% (Mustard header)
+            // SECTION 2: Additional documents for ≥25% (Mustard header + white container)
             html += `
-                <div style="background: #F0E060; color: #1a1a1a; padding: 15px 25px; border-radius: 8px 8px 0 0; margin-top: 30px; margin-bottom: 0;">
-                    <h4 style="margin: 0; font-size: 0.95em; font-weight: 600;">📝 Document additionnel pour les personnes physiques qui vont détenir ≥ 25% du capital social APRÈS l'augmentation de capital</h4>
-                </div>
-            `;
-
-            // Document 3: Preuve origine fonds (orange section)
-            html += `
-                <div class="doc-item" style="margin-top: 0; border-radius: 0 0 8px 8px;">
-                    <div class="doc-item-title">✓ Preuve documentaire de l'origine des fonds</div>
-                    <div class="doc-item-description">
-                        💡 <em>Consultez votre table de capitalisation (cap table) pour identifier quels participants détiendront ≥ 25% du capital post-opération.</em>
-                        <br><br>
-                        (<a href="https://support-fr.qonto.com/hc/fr/articles/38738891662737-Quels-documents-peuvent-%C3%AAtre-fournis-comme-preuve-de-l-origine-des-fonds#h_01K4AXEVBCTV7ZRXK5DX9P790V" target="_blank">voir quels documents justificatifs sont acceptés</a>)
+                <div style="background: white; border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: 20px;">
+                    <div style="background: #F0E060; color: #1a1a1a; padding: 10px 16px;">
+                        <h4 style="margin: 0; font-size: 0.95em; font-weight: 600;">📝 Document additionnel pour les personnes physiques qui vont détenir ≥ 25% du capital social APRÈS l'augmentation de capital</h4>
+                    </div>
+                    <div style="padding: 16px; background: white;">
+                        <div style="font-weight: 600; color: #000000; margin-bottom: 5px; display: flex; align-items: center; gap: 8px; font-size: 11px;">
+                            <span style="color: #000000; font-size: 1.2em;">✓</span>
+                            <span>Preuve documentaire de l'origine des fonds</span>
+                        </div>
+                        <div style="color: #64748B; font-size: 11px; line-height: 1.4; margin-left: 26px;">
+                            <a href="https://support-fr.qonto.com/hc/fr/articles/38738891662737-Quels-documents-peuvent-%C3%AAtre-fournis-comme-preuve-de-l-origine-des-fonds#h_01K4AXEVBCTV7ZRXK5DX9P790V" target="_blank" style="color: #3275C4;">Voir quels documents justificatifs sont acceptés</a>
+                        </div>
                     </div>
                 </div>
             `;
 
-            // SECTION 3: Formulaire Bénéficiaire effectif (if applicable) - separate Mustard section
+            // SECTION 3: Formulaire Bénéficiaire effectif (if applicable)
             if (answers.hasNewBE) {
                 html += `
-                    <div style="background: #F0E060; color: #1a1a1a; padding: 15px 25px; border-radius: 8px 8px 0 0; margin-top: 30px; margin-bottom: 0;">
-                        <h4 style="margin: 0; font-size: 0.95em; font-weight: 600;">📝 Document additionnel pour nouveaux bénéficiaires effectifs</h4>
-                    </div>
-                    <div class="doc-item" style="margin-top: 0; border-radius: 0 0 8px 8px;">
-                        <div class="doc-item-title">✓ Formulaire d'auto-déclaration</div>
-                        <div class="doc-item-description">
-                            Pour chaque personne qui devient nouveau bénéficiaire effectif (n'était PAS bénéficiaire effectif avant l'opération et le devient après). 
-                            Document à remplir et retourner à Qonto.
-                            <br>
-                            <a href="documents/formulaire_auto_declaration.pdf" download class="download-btn">📥 Télécharger le formulaire</a>
+                    <div style="background: white; border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: 20px;">
+                        <div style="background: #F0E060; color: #1a1a1a; padding: 10px 16px;">
+                            <h4 style="margin: 0; font-size: 0.95em; font-weight: 600;">📝 Document additionnel pour nouveaux bénéficiaires effectifs</h4>
+                        </div>
+                        <div style="padding: 16px; background: white;">
+                            <div style="font-weight: 600; color: #000000; margin-bottom: 5px; display: flex; align-items: center; gap: 8px; font-size: 11px;">
+                                <span style="color: #000000; font-size: 1.2em;">✓</span>
+                                <span>Formulaire d'auto-déclaration</span>
+                            </div>
+                            <div style="color: #64748B; font-size: 11px; line-height: 1.4; margin-left: 26px;">
+                                Ce formulaire doit être complété et signé par <strong>chaque personne</strong> qui devient nouveau bénéficiaire effectif suite à cette opération (c'est-à-dire les personnes qui n'étaient PAS bénéficiaires effectifs avant l'opération et qui le deviennent après).
+                                <br>
+                                <a href="documents/formulaire_auto_declaration.pdf" download class="download-btn" style="font-size: 10px;">📥 Télécharger le formulaire</a>
+                            </div>
                         </div>
                     </div>
                 `;
@@ -1462,42 +1381,27 @@
         function generatePMResults() {
             let html = '<div class="doc-category-pm"><h3>🏢 Personnes Morales</h3>';
 
-            // Instruction card
-            html += `
-                <div class="doc-item">
-                    <div class="doc-item-title">📊 Comment utiliser les tableaux ci-dessous ?</div>
-                    <div class="doc-item-description">
-                        <strong>Pour CHAQUE participant</strong> personne morale à l'augmentation de capital :<br>
-                        1️⃣ Consultez votre <strong>table de capitalisation (cap table)</strong><br>
-                        2️⃣ Identifiez le <strong>% de capital que détiendra ce participant APRÈS l'opération</strong><br>
-                        3️⃣ Trouvez la ligne correspondante dans le tableau<br>
-                        4️⃣ Collectez les documents listés pour ce participant
-                    </div>
-                </div>
-            `;
-
             // Universal document section - ONLY if non-fund entities are selected
             const hasNonFundEntities = answers.pmTypes.some(type => type !== 'pmFonds');
             const onlyFunds = answers.pmTypes.length === 1 && answers.pmTypes.includes('pmFonds');
             
             if (hasNonFundEntities) {
-                // Universal document section header
+                // Universal document section - same structure as PP blue block
                 html += `
-                    <div style="background: #7B4DB8; color: white; padding: 15px 25px; border-radius: 8px 8px 0 0; margin-top: 30px; margin-bottom: 0;">
-                        <h4 style="margin: 0; font-size: 0.95em; font-weight: 600;">📋 Document requis pour TOUS les participants personnes morales</h4>
-                    </div>
-                `;
-
-                // Universal document card (connected to header)
-                const hasFunds = answers.pmTypes.includes('pmFonds');
-                html += `
-                    <div class="doc-item" style="margin-top: 0; border-radius: 0 0 8px 8px;">
-                        <div class="doc-item-title">✓ Déclaration d'origine des fonds</div>
-                        <div class="doc-item-description">
-                            Document à remplir et retourner à Qonto (version personnes morales)
-                            ${hasFunds ? '<br><br>⚠️ <em>À l\'exception des fonds d\'investissement</em>' : ''}
-                            <br>
-                            <a href="documents/declaration_origine_fonds_PM.pdf" download class="download-btn">📥 Télécharger le formulaire</a>
+                    <div style="background: white; border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: 24px; margin-bottom: 20px;">
+                        <div style="background: #3275C4; color: white; padding: 10px 16px;">
+                            <h4 style="margin: 0; font-size: 0.95em; font-weight: 600;">📋 Document requis pour TOUS les participants personnes morales</h4>
+                        </div>
+                        <div style="padding: 16px; background: white;">
+                            <div style="font-weight: 600; color: #000000; margin-bottom: 5px; display: flex; align-items: center; gap: 8px; font-size: 11px;">
+                                <span style="color: #000000; font-size: 1.2em;">✓</span>
+                                <span>Déclaration d'origine des fonds</span>
+                            </div>
+                            <div style="color: #64748B; font-size: 11px; line-height: 1.4; margin-left: 26px;">
+                                Ce document doit être complété et signé par <strong>chaque personne morale</strong> qui participe à l'opération (chaque participant remplit son propre formulaire).
+                                <br>
+                                <a href="documents/declaration_origine_fonds_PM.pdf" download class="download-btn" style="font-size: 10px;">📥 Télécharger le formulaire</a>
+                            </div>
                         </div>
                     </div>
                 `;
@@ -1526,46 +1430,43 @@
 
         function generateSocietesFRTable() {
             return `
-                <div style="margin: 40px 0;">
+                <div style="margin: 24px 0;">
                     <div style="background: white; border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                        <div style="background: #2F95A0; color: white; padding: 15px 25px;">
-                            <h4 style="margin: 0; font-size: 1.08em; font-weight: 600;">🇫🇷 Documents requis pour les sociétés françaises</h4>
+                        <div style="background: #6B7280; color: white; padding: 10px 16px;">
+                            <h4 style="margin: 0; font-size: 0.95em; font-weight: 600;">🇫🇷 Documents requis pour les sociétés françaises</h4>
                         </div>
-                        <div style="padding: 25px;">
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+                        <div style="padding: 16px;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start;">
                                 <!-- Colonne < 25% -->
-                                <div style="background: #fafbfc; padding: 20px; border-radius: 8px; border: 3px solid #2F95A0;">
-                                    <div style="font-size: 1em; font-weight: 600; color: #475569; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #2F95A0;">
-                                        Pour un participant détenant &lt; 25% du capital après l'opération
+                                <div style="background: #fafbfc; padding: 12px; border-radius: 6px; border: 3px solid #D1D5DB;">
+                                    <div style="font-size: 0.9em; font-weight: 600; color: #475569; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid #D1D5DB;">
+                                        Pour une société <strong>détenant &lt; 25%</strong> du capital après l'opération
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Extrait Kbis/INPI/Pappers (&lt; 3 mois)</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Extrait Kbis/INPI/Pappers (&lt; 3 mois)</div>
                                     </div>
-                                    <div style="padding: 12px 0;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Pièce d'identité du représentant légal</div>
+                                    <div style="padding: 5px 0;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Pièce d'identité du représentant légal</div>
                                     </div>
                                 </div>
                                 
-                                <!-- Colonne ≥ 25% -->
-                                <div style="background: #fafbfc; padding: 20px; border-radius: 8px; border: 3px solid #7B4DB8;">
-                                    <div style="font-size: 1em; font-weight: 600; color: #475569; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #7B4DB8;">
-                                        Pour un participant détenant ≥ 25% du capital après l'opération
+                                <!-- Colonne ≥ 25% - MODIFICATION 1: Suppression de "Statuts à jour" -->
+                                <div style="background: #fafbfc; padding: 12px; border-radius: 6px; border: 3px solid #6B7280;">
+                                    <div style="font-size: 0.9em; font-weight: 600; color: #475569; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid #6B7280;">
+                                        Pour une société <strong>détenant ≥ 25%</strong> du capital après l'opération
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Extrait Kbis/INPI/Pappers (&lt; 3 mois)</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Extrait Kbis/INPI/Pappers (&lt; 3 mois)</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Statuts à jour</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Pièce d'identité du représentant légal</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Pièce d'identité du représentant légal</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Pouvoirs du représentant légal</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Pouvoirs du représentant légal</div>
-                                    </div>
-                                    <div style="padding: 12px 0;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;"><strong>✓ Preuve documentaire de l'origine des fonds</strong></div>
-                                        <div style="color: #64748b; font-size: 0.95em; margin-top: 5px;">(<a href="https://support-fr.qonto.com/hc/fr/articles/38738891662737-Quels-documents-peuvent-%C3%AAtre-fournis-comme-preuve-de-l-origine-des-fonds#h_01K4AXEVC8SX6778VWKBZTWE7M" target="_blank">voir quels documents justificatifs sont acceptés</a>)</div>
+                                    <div style="padding: 5px 0;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Preuve documentaire de l'origine des fonds</div>
+                                        <div style="color: #64748b; font-size: 11px; margin-top: 2px; margin-left: 20px;"><a href="https://support-fr.qonto.com/hc/fr/articles/38738891662737-Quels-documents-peuvent-%C3%AAtre-fournis-comme-preuve-de-l-origine-des-fonds#h_01K4AXEVBCTV7ZRXK5DX9P790V" target="_blank" style="color: #3275C4;">Voir quels documents justificatifs sont acceptés</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -1577,67 +1478,73 @@
 
         function generateSocietesETRTable() {
             return `
-                <div style="margin: 40px 0;">
+                <div style="margin: 32px 0;">
                     <div style="background: white; border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                        <div style="background: #2F95A0; color: white; padding: 15px 25px;">
-                            <h4 style="margin: 0; font-size: 1.08em; font-weight: 600;">🌍 Documents requis pour les sociétés étrangères</h4>
+                        <div style="background: #6B7280; color: white; padding: 12px 20px;">
+                            <h4 style="margin: 0; font-size: 1em; font-weight: 600;">🌍 Documents requis pour les sociétés étrangères</h4>
                         </div>
-                        <div style="padding: 25px;">
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
-                                <!-- Colonne < 25% -->
-                                <div style="background: #fafbfc; padding: 20px; border-radius: 8px; border: 3px solid #2F95A0;">
-                                    <div style="font-size: 1em; font-weight: 600; color: #475569; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #2F95A0;">
-                                        Pour un participant détenant &lt; 25% du capital après l'opération
+                        <div style="padding: 20px;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;">
+                                <!-- Colonne < 25% - MODIFICATION 2: Ajout de "Statuts à jour" -->
+                                <div style="background: #fafbfc; padding: 16px; border-radius: 8px; border: 3px solid #D1D5DB;">
+                                    <div style="font-size: 0.95em; font-weight: 600; color: #475569; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #D1D5DB;">
+                                        Pour une société <strong>détenant &lt; 25%</strong> du capital après l'opération
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Certificat d'immatriculation (&lt; 3 mois, traduit en français)</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Certificat d'immatriculation (&lt; 3 mois, traduit en français)</div>
                                     </div>
-                                    <div style="padding: 12px 0;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Pièce d'identité du représentant légal</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Document officiel récent prouvant que l'entité n'est pas en procédure collective, faillite ou liquidation (daté du mois en cours ou du mois précédent)</div>
+                                    </div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Statuts à jour</div>
+                                    </div>
+                                    <div style="padding: 5px 0;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Pièce d'identité du représentant légal</div>
                                     </div>
                                 </div>
                                 
-                                <!-- Colonne ≥ 25% -->
-                                <div style="background: #fafbfc; padding: 20px; border-radius: 8px; border: 3px solid #7B4DB8;">
-                                    <div style="font-size: 1em; font-weight: 600; color: #475569; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #7B4DB8;">
-                                        Pour un participant détenant ≥ 25% du capital après l'opération
+                                <!-- Colonne ≥ 25% - MODIFICATION 4: Remplacement de "Statuts en vigueur" par "Statuts à jour" -->
+                                <div style="background: #fafbfc; padding: 16px; border-radius: 8px; border: 3px solid #6B7280;">
+                                    <div style="font-size: 0.95em; font-weight: 600; color: #475569; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #6B7280;">
+                                        Pour une société <strong>détenant ≥ 25%</strong> du capital après l'opération
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Certificat d'immatriculation (&lt; 3 mois, traduit en français)</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Certificat d'immatriculation (&lt; 3 mois, traduit en français)</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Certificat "good standing" (&lt; 3 mois, traduit en français)</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Document officiel récent prouvant que l'entité n'est pas en procédure collective, faillite ou liquidation (daté du mois en cours ou du mois précédent)</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Statuts en vigueur</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Statuts à jour</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Numéro fiscal + LEI si applicable</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Numéro fiscal + LEI si applicable</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Registre administrateurs/dirigeants</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Registre administrateurs/dirigeants</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Organigramme complet</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Organigramme complet</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Pouvoirs signataires</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Pouvoirs signataires</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Structure actionnariat (jusqu'aux Bénéficiaires effectifs ≥25%)</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Structure actionnariat (jusqu'aux Bénéficiaires effectifs ≥25%)</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Comptes annuels (3 dernières années)</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Comptes annuels (3 dernières années)</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;"><strong>✓ Preuve documentaire de l'origine des fonds</strong></div>
-                                        <div style="color: #64748b; font-size: 0.95em; margin-top: 5px;">(<a href="https://support-fr.qonto.com/hc/fr/articles/38738891662737-Quels-documents-peuvent-%C3%AAtre-fournis-comme-preuve-de-l-origine-des-fonds#h_01K4AXEVC8SX6778VWKBZTWE7M" target="_blank">voir quels documents justificatifs sont acceptés</a>)</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Preuve documentaire de l'origine des fonds</div>
+                                        <div style="color: #64748b; font-size: 11px; margin-top: 2px; margin-left: 20px;"><a href="https://support-fr.qonto.com/hc/fr/articles/38738891662737-Quels-documents-peuvent-%C3%AAtre-fournis-comme-preuve-de-l-origine-des-fonds#h_01K4AXEVBCTV7ZRXK5DX9P790V" target="_blank" style="color: #3275C4;">Voir quels documents justificatifs sont acceptés</a></div>
                                     </div>
-                                    <div style="padding: 12px 0;">
-                                        <div style="background: #f8f9fa; padding: 12px; border-radius: 6px;">
-                                            <strong style="display: block; margin-bottom: 5px;">Pour chaque Bénéficiaire effectif ≥ 25% :</strong>
-                                            <span style="color: #000000;">✓ Pièce d'identité</span><br>
-                                            <span style="color: #000000;">✓ Justificatif domicile</span>
+                                    <div style="padding: 5px 0;">
+                                        <div style="background: #f8f9fa; padding: 6px; border-radius: 4px;">
+                                            <strong style="display: block; margin-bottom: 2px; font-size: 11px;">Pour chaque Bénéficiaire effectif ≥ 25% :</strong>
+                                            <span style="color: #000000; font-size: 11px;">✓ Pièce d'identité</span><br>
+                                            <span style="color: #000000; font-size: 11px;">✓ Justificatif domicile</span>
                                         </div>
                                     </div>
                                 </div>
@@ -1650,50 +1557,62 @@
 
         function generateFondsTable() {
             return `
-                <div style="margin: 40px 0;">
+                <div style="margin: 32px 0;">
                     <div style="background: white; border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                        <div style="background: #2F95A0; color: white; padding: 15px 25px;">
-                            <h4 style="margin: 0; font-size: 1.08em; font-weight: 600;">💼 Documents requis pour les fonds d'investissement</h4>
+                        <div style="background: #6B7280; color: white; padding: 12px 20px;">
+                            <h4 style="margin: 0; font-size: 1em; font-weight: 600;">💼 Documents requis pour les fonds d'investissement</h4>
                         </div>
-                        <div style="padding: 25px;">
-                            <div style="background: #E0E0E0; border-left: 5px solid #7E0F4C; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
-                                <strong style="color: #7E0F4C;">🚫 IMPORTANT</strong>
-                                <p style="color: #7E0F4C; margin: 5px 0 0 0;">Les fonds d'investissement hors UE ne sont PAS acceptés</p>
+                        <div style="padding: 20px;">
+                            <div style="background: #E0E0E0; border-left: 5px solid #7E0F4C; padding: 12px; border-radius: 8px; margin-bottom: 16px;">
+                                <strong style="color: #7E0F4C; font-size: 0.95em;">🚫 IMPORTANT</strong>
+                                <p style="color: #7E0F4C; margin: 4px 0 0 0; font-size: 0.9em;">Les fonds d'investissement hors UE ne sont PAS acceptés</p>
                             </div>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;">
                                 <!-- Colonne < 25% -->
-                                <div style="background: #fafbfc; padding: 20px; border-radius: 8px; border: 3px solid #2F95A0;">
-                                    <div style="font-size: 1em; font-weight: 600; color: #475569; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #2F95A0;">
+                                <div style="background: #fafbfc; padding: 16px; border-radius: 8px; border: 3px solid #D1D5DB;">
+                                    <div style="font-size: 0.95em; font-weight: 600; color: #475569; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #D1D5DB;">
                                         Pour un fonds détenant &lt; 25% du capital après l'opération
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Prospectus du fonds (traduit en français)</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Prospectus du fonds (traduit en français)</div>
                                     </div>
-                                    <div style="padding: 12px 0;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Pièce d'identité représentant société de gestion</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Certificat d'immatriculation de la <strong>société de gestion</strong> (&lt; 3 mois, traduit en français)</div>
+                                    </div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Document officiel récent prouvant que la <strong>société de gestion</strong> n'est pas en procédure collective, faillite ou liquidation (daté du mois en cours ou du mois précédent)</div>
+                                    </div>
+                                    <div style="padding: 5px 0;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Pièce d'identité représentant société de gestion</div>
                                     </div>
                                 </div>
                                 
                                 <!-- Colonne ≥ 25% -->
-                                <div style="background: #fafbfc; padding: 20px; border-radius: 8px; border: 3px solid #7B4DB8;">
-                                    <div style="font-size: 1em; font-weight: 600; color: #475569; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #7B4DB8;">
+                                <div style="background: #fafbfc; padding: 16px; border-radius: 8px; border: 3px solid #6B7280;">
+                                    <div style="font-size: 0.95em; font-weight: 600; color: #475569; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #6B7280;">
                                         Pour un fonds détenant ≥ 25% du capital après l'opération
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Prospectus du fonds (traduit en français)</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Prospectus du fonds (traduit en français)</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Nom du gestionnaire</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Nom du gestionnaire</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Preuve agrément société de gestion (AMF/UE)</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Certificat d'immatriculation de la <strong>société de gestion</strong> (&lt; 3 mois, traduit en français)</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Pièce d'identité représentant</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Document officiel récent prouvant que la <strong>société de gestion</strong> n'est pas en procédure collective, faillite ou liquidation (daté du mois en cours ou du mois précédent)</div>
                                     </div>
-                                    <div style="padding: 12px 0;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;"><strong>✓ Preuve documentaire de l'origine des fonds</strong></div>
-                                        <div style="color: #64748b; font-size: 0.95em; margin-top: 5px;">(<a href="https://support-fr.qonto.com/hc/fr/articles/38738891662737-Quels-documents-peuvent-%C3%AAtre-fournis-comme-preuve-de-l-origine-des-fonds#h_01K4AXEVC8SX6778VWKBZTWE7M" target="_blank">voir quels documents justificatifs sont acceptés</a>)</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Preuve agrément société de gestion (AMF/UE)</div>
+                                    </div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Pièce d'identité représentant</div>
+                                    </div>
+                                    <div style="padding: 5px 0;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Preuve documentaire de l'origine des fonds</div>
+                                        <div style="color: #64748b; font-size: 11px; margin-top: 2px; margin-left: 20px;"><a href="https://support-fr.qonto.com/hc/fr/articles/38738891662737-Quels-documents-peuvent-%C3%AAtre-fournis-comme-preuve-de-l-origine-des-fonds#h_01K4AXEVBCTV7ZRXK5DX9P790V" target="_blank" style="color: #3275C4;">Voir quels documents justificatifs sont acceptés</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -1705,40 +1624,49 @@
 
         function generateAssociationsTable() {
             return `
-                <div style="margin: 40px 0;">
+                <div style="margin: 32px 0;">
                     <div style="background: white; border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                        <div style="background: #2F95A0; color: white; padding: 15px 25px;">
-                            <h4 style="margin: 0; font-size: 1.08em; font-weight: 600;">🤝 Documents requis pour les associations</h4>
+                        <div style="background: #6B7280; color: white; padding: 12px 20px;">
+                            <h4 style="margin: 0; font-size: 1em; font-weight: 600;">🤝 Documents requis pour les associations</h4>
                         </div>
-                        <div style="padding: 25px;">
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
-                                <!-- Colonne < 25% -->
-                                <div style="background: #fafbfc; padding: 20px; border-radius: 8px; border: 3px solid #2F95A0;">
-                                    <div style="font-size: 1em; font-weight: 600; color: #475569; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #2F95A0;">
-                                        Pour une association détenant &lt; 25% du capital après l'opération
+                        <div style="padding: 20px;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;">
+                                <!-- Colonne < 25% - MODIFICATION 5: Ajout de "Statuts à jour" -->
+                                <div style="background: #fafbfc; padding: 16px; border-radius: 8px; border: 3px solid #D1D5DB;">
+                                    <div style="font-size: 0.95em; font-weight: 600; color: #475569; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #D1D5DB;">
+                                        Pour une association <strong>détenant &lt; 25%</strong> du capital après l'opération
                                     </div>
-                                    <div style="padding: 12px 0;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Avis INSEE (FR) ou équivalent (traduit en français)</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Avis INSEE (FR) ou équivalent (traduit en français)</div>
+                                    </div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Document officiel récent prouvant que l'entité n'est pas en procédure collective, faillite ou liquidation (daté du mois en cours ou du mois précédent)</div>
+                                    </div>
+                                    <div style="padding: 5px 0;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Statuts à jour</div>
                                     </div>
                                 </div>
                                 
                                 <!-- Colonne ≥ 25% -->
-                                <div style="background: #fafbfc; padding: 20px; border-radius: 8px; border: 3px solid #7B4DB8;">
-                                    <div style="font-size: 1em; font-weight: 600; color: #475569; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #7B4DB8;">
-                                        Pour une association détenant ≥ 25% du capital après l'opération
+                                <div style="background: #fafbfc; padding: 16px; border-radius: 8px; border: 3px solid #6B7280;">
+                                    <div style="font-size: 0.95em; font-weight: 600; color: #475569; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #6B7280;">
+                                        Pour une association <strong>détenant ≥ 25%</strong> du capital après l'opération
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Avis INSEE ou équivalent (traduit en français)</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Avis INSEE ou équivalent (traduit en français)</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Statuts à jour</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Statuts à jour</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Récépissé de déclaration</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Récépissé de déclaration</div>
                                     </div>
-                                    <div style="padding: 12px 0;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;"><strong>✓ Preuve documentaire de l'origine des fonds</strong></div>
-                                        <div style="color: #64748b; font-size: 0.95em; margin-top: 5px;">(<a href="https://support-fr.qonto.com/hc/fr/articles/38738891662737-Quels-documents-peuvent-%C3%AAtre-fournis-comme-preuve-de-l-origine-des-fonds#h_01K4AXEVC8SX6778VWKBZTWE7M" target="_blank">voir quels documents justificatifs sont acceptés</a>)</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Document officiel récent prouvant que l'entité n'est pas en procédure collective, faillite ou liquidation (daté du mois en cours ou du mois précédent)</div>
+                                    </div>
+                                    <div style="padding: 5px 0;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Preuve documentaire de l'origine des fonds</div>
+                                        <div style="color: #64748b; font-size: 11px; margin-top: 2px; margin-left: 20px;"><a href="https://support-fr.qonto.com/hc/fr/articles/38738891662737-Quels-documents-peuvent-%C3%AAtre-fournis-comme-preuve-de-l-origine-des-fonds#h_01K4AXEVBCTV7ZRXK5DX9P790V" target="_blank" style="color: #3275C4;">Voir quels documents justificatifs sont acceptés</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -1750,58 +1678,67 @@
 
         function generateFondationsTable() {
             return `
-                <div style="margin: 40px 0;">
+                <div style="margin: 32px 0;">
                     <div style="background: white; border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                        <div style="background: #2F95A0; color: white; padding: 15px 25px;">
-                            <h4 style="margin: 0; font-size: 1.08em; font-weight: 600;">🏛️ Documents requis pour les fondations</h4>
+                        <div style="background: #6B7280; color: white; padding: 12px 20px;">
+                            <h4 style="margin: 0; font-size: 1em; font-weight: 600;">🏛️ Documents requis pour les fondations</h4>
                         </div>
-                        <div style="padding: 25px;">
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
-                                <!-- Colonne < 25% -->
-                                <div style="background: #fafbfc; padding: 20px; border-radius: 8px; border: 3px solid #2F95A0;">
-                                    <div style="font-size: 1em; font-weight: 600; color: #475569; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #2F95A0;">
+                        <div style="padding: 20px;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;">
+                                <!-- Colonne < 25% - MODIFICATION 6: Ajout de "Statuts à jour" -->
+                                <div style="background: #fafbfc; padding: 16px; border-radius: 8px; border: 3px solid #D1D5DB;">
+                                    <div style="font-size: 0.95em; font-weight: 600; color: #475569; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #D1D5DB;">
                                         Pour une fondation détenant &lt; 25% du capital après l'opération
                                     </div>
-                                    <div style="padding: 12px 0;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Acte constitutif/charte (traduit en français)</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Acte constitutif/charte (traduit en français)</div>
+                                    </div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Document officiel récent prouvant que l'entité n'est pas en procédure collective, faillite ou liquidation (daté du mois en cours ou du mois précédent)</div>
+                                    </div>
+                                    <div style="padding: 5px 0;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Statuts à jour</div>
                                     </div>
                                 </div>
                                 
                                 <!-- Colonne ≥ 25% -->
-                                <div style="background: #fafbfc; padding: 20px; border-radius: 8px; border: 3px solid #7B4DB8;">
-                                    <div style="font-size: 1em; font-weight: 600; color: #475569; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #7B4DB8;">
+                                <div style="background: #fafbfc; padding: 16px; border-radius: 8px; border: 3px solid #6B7280;">
+                                    <div style="font-size: 0.95em; font-weight: 600; color: #475569; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #6B7280;">
                                         Pour une fondation détenant ≥ 25% du capital après l'opération
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Acte constitutif/charte (traduit en français)</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Acte constitutif/charte (traduit en français)</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Certificat d'enregistrement</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Certificat d'enregistrement</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Numéro fiscal</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Document officiel récent prouvant que l'entité n'est pas en procédure collective, faillite ou liquidation (daté du mois en cours ou du mois précédent)</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Statuts + liste membres</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Numéro fiscal</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Objectifs et finalité</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Statuts + liste membres</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Pièce d'identité + domicile membres</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Objectifs et finalité</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Comptes annuels + fiscales</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Pièce d'identité + domicile membres</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Organigramme complet</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Comptes annuels + fiscales</div>
                                     </div>
-                                    <div style="padding: 12px 0; border-bottom: 1px solid #f1f5f9;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;">✓ Déclaration BE</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Organigramme complet</div>
                                     </div>
-                                    <div style="padding: 12px 0;">
-                                        <div style="font-weight: 500; color: #000000; margin-bottom: 3px; font-size: 1.05em;"><strong>✓ Preuve documentaire de l'origine des fonds</strong></div>
-                                        <div style="color: #64748b; font-size: 0.95em; margin-top: 5px;">(<a href="https://support-fr.qonto.com/hc/fr/articles/38738891662737-Quels-documents-peuvent-%C3%AAtre-fournis-comme-preuve-de-l-origine-des-fonds#h_01K4AXEVC8SX6778VWKBZTWE7M" target="_blank">voir quels documents justificatifs sont acceptés</a>)</div>
+                                    <div style="padding: 5px 0; border-bottom: 1px solid #f1f5f9;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Déclaration bénéficiaire effectif</div>
+                                    </div>
+                                    <div style="padding: 5px 0;">
+                                        <div style="font-weight: 500; color: #000000; margin-bottom: 1px; font-size: 11px;">✓ Preuve documentaire de l'origine des fonds</div>
+                                        <div style="color: #64748b; font-size: 11px; margin-top: 2px; margin-left: 20px;"><a href="https://support-fr.qonto.com/hc/fr/articles/38738891662737-Quels-documents-peuvent-%C3%AAtre-fournis-comme-preuve-de-l-origine-des-fonds#h_01K4AXEVBCTV7ZRXK5DX9P790V" target="_blank" style="color: #3275C4;">Voir quels documents justificatifs sont acceptés</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -1912,6 +1849,70 @@
             
             updateProgress();
         }
+
+        function downloadPDF() {
+            // Récupérer la section résultats
+            var resultsDiv = document.getElementById('resultsContent');
+            
+            if (!resultsDiv || resultsDiv.innerHTML.trim() === '') {
+                alert('Aucun contenu à télécharger. Veuillez d\'abord répondre aux questions.');
+                return;
+            }
+            
+            // Masquer les boutons temporairement
+            var buttons = document.querySelectorAll('button, .button-group');
+            buttons.forEach(function(btn) {
+                btn.style.visibility = 'hidden';
+            });
+            
+            // Capturer l'image avec html2canvas
+            html2canvas(resultsDiv, {
+                scale: 2,
+                useCORS: true,
+                logging: false,
+                backgroundColor: '#ffffff',
+                windowWidth: 1200
+            }).then(function(canvas) {
+                // Réafficher les boutons
+                buttons.forEach(function(btn) {
+                    btn.style.visibility = 'visible';
+                });
+                
+                // Créer le PDF
+                var imgData = canvas.toDataURL('image/jpeg', 1.0);
+                var imgWidth = 210; // A4 width in mm
+                var pageHeight = 297; // A4 height in mm
+                var imgHeight = canvas.height * imgWidth / canvas.width;
+                var heightLeft = imgHeight;
+                var position = 0;
+                
+                var { jsPDF } = window.jspdf;
+                var pdf = new jsPDF('p', 'mm', 'a4');
+                
+                // Ajouter l'image (et créer plusieurs pages si nécessaire)
+                pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+                
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    pdf.addPage();
+                    pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+                
+                // Télécharger
+                pdf.save('Liste_Documents_Augmentation_Capital.pdf');
+                
+            }).catch(function(error) {
+                // Réafficher les boutons en cas d'erreur
+                buttons.forEach(function(btn) {
+                    btn.style.visibility = 'visible';
+                });
+                console.error('Erreur:', error);
+                alert('Erreur lors de la génération du PDF');
+            });
+        }
+
     </script>
 </body>
 </html>
